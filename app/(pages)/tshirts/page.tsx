@@ -1,7 +1,6 @@
 import { Metadata } from 'next';
 import CallToAction from '~/components/widgets/CallToAction';
 import Content from '~/components/widgets/Content';
-import FAQs from '~/components/widgets/FAQs';
 import Features2 from '~/components/widgets/Features2';
 import Features4 from '~/components/widgets/Features4';
 import Hero from '~/components/widgets/Hero';
@@ -15,10 +14,10 @@ import {
   features4Services,
   heroServices,
   testimonialsServices,
-} from '~/shared/data/pages/services.data';
+} from '~/shared/data/pages/tShirts.data';
 
 export const metadata: Metadata = {
-  title: 'Services',
+  title: 'T-shirts',
 };
 
 const Page = () => {
@@ -30,7 +29,6 @@ const Page = () => {
       <Content {...contentServicesTwo} />
       <Features4 {...features4Services} />
       <Testimonials {...testimonialsServices} />
-      <FAQs {...faqsServices} />
       <CallToAction {...callToActionServices} />
     </>
   );

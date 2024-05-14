@@ -29,12 +29,12 @@ export const headerData: HeaderProps = {
       icon: IconChevronDown,
       links: [
         {
-          label: 'Services',
-          href: '/services',
+          label: 'T-shirts',
+          href: '/tShirts',
         },
         {
-          label: 'Pricing',
-          href: '/pricing',
+          label: 'Books',
+          href: '/books',
         },
         {
           label: 'About us',
@@ -43,10 +43,6 @@ export const headerData: HeaderProps = {
         {
           label: 'Contact us',
           href: '/contact',
-        },
-        {
-          label: 'FAQs',
-          href: '/faqs',
         },
         {
           label: 'Terms & Conditions',
@@ -68,11 +64,11 @@ export const headerData: HeaderProps = {
     },
   ],
   actions: [
-    {
-      text: 'Download',
-      href: 'https://github.com/onwidget/tailnext',
-      targetBlank: true,
-    },
+    // {
+    //   text: 'Download',
+    //   href: 'https://github.com/onwidget/tailnext',
+    //   targetBlank: true,
+    // },
   ],
   isSticky: true,
   showToggleTheme: true,
