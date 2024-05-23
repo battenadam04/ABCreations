@@ -79,7 +79,7 @@ export const contact2Contact: ContactProps = {
       cols: 30,
       rows: 5,
       label: 'How can we help you?',
-      name: 'textarea',
+      name: 'message',
       placeholder: 'Write your message...',
     },
     checkboxes: [

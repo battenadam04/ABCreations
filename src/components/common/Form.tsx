@@ -53,20 +53,16 @@ const Form = ({
   };
 
 
-  const { register, handleSubmit, formState: { errors } } = useForm();
+  const { register, handleSubmit, getValues, formState: { errors } } = useForm();
 
-  const onSubmit = async (data: any) => {
-    console.log(data);
-    // Call your API route to send the email
-    const res = await fetch('/api/sendmail', {
+  const onSubmit = (data: any) => {
+    fetch('/api/sendmail', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify(data),
     });
-    const result = await res.json();
-    console.log(result);
   };
 
   return (
@@ -85,12 +81,13 @@ const Form = ({
                 <input
                   type={type}
                   id={name}
-                  name={name}
                   autoComplete={autocomplete}
                   value={inputValues[index]}
-                  onChange={changeInputValueHandler}
                   placeholder={placeholder}
                   className="mb-2 w-full rounded-md border border-gray-400 py-2 pl-2 pr-4 shadow-md dark:text-gray-300 sm:mb-0"
+                  {...register(name as string, {
+                    onChange: () => changeInputValueHandler
+                  })}
                 />
               </div>
             ))}
@@ -105,11 +102,12 @@ const Form = ({
                   <input
                     id={label}
                     type="radio"
-                    name={label}
                     value={`value${index}`}
                     checked={radioBtnValue === `value${index}`}
-                    onChange={changeRadioBtnsHandler}
                     className="cursor-pointer"
+                    {...register(label as string, {
+                      onChange: () => changeRadioBtnsHandler
+                    })}
                   />
                   <label htmlFor={label} className="ml-2">
                     {label}
@@ -127,13 +125,14 @@ const Form = ({
             </label>
             <textarea
               id={textarea.name}
-              name={textarea.name}
               cols={textarea.cols}
               rows={textarea.rows}
               value={textareaValues}
-              onChange={(e) => changeTextareaHandler(e)}
               placeholder={textarea.placeholder}
               className="mb-2 w-full rounded-md border border-gray-400 py-2 pl-2 pr-4 shadow-md dark:text-gray-300 sm:mb-0"
+              {...register(textarea.name as string, {
+                onChange: (e) => changeTextareaHandler(e)
+              })}
             />
           </div>
         )}
@@ -145,10 +144,11 @@ const Form = ({
                 <input
                   id={label}
                   type="checkbox"
-                  name={label}
                   checked={checkedState[index]}
-                  onChange={() => changeCheckboxHandler(index)}
                   className="cursor-pointer"
+                  {...register(label as string, {
+                    onChange: () => changeCheckboxHandler(index)
+                  })}
                 />
                 <label htmlFor={label} className="ml-2">
                   {label}
