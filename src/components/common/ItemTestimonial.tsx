@@ -5,7 +5,7 @@ import DividerLine from './DividerLine';
 
 const ItemTestimonial = ({
   name,
-  job,
+  platform,
   testimonial,
   image,
   isTestimonialUp,
@@ -18,13 +18,13 @@ const ItemTestimonial = ({
   dataClass,
   nameJobClass,
   nameClass,
-  jobClass,
+  platformClass,
   testimonialClass,
 }: Testimonial) => {
   return (
     <div className={twMerge(`select-none`, containerClass)}>
       <div className={twMerge(`flex ${isTestimonialUp ? 'flex-col-reverse' : 'flex-col'}`, panelClass)}>
-        {((image && name) || (name && job)) && (
+        {((image && name) || (name && platform)) && (
           <>
             <div className={twMerge('flex items-center', dataClass)}>
               {image && (
@@ -39,7 +39,7 @@ const ItemTestimonial = ({
 
               <div className={twMerge('flex flex-col justify-center', nameJobClass)}>
                 {name && <h3 className={twMerge('font-semibold', nameClass)}>{name}</h3>}
-                {job && <span className={twMerge('dark:text-slate-400', jobClass)}>{job}</span>}
+                {platform && <span className={twMerge('dark:text-slate-400', platformClass)}>{platform}</span>}
               </div>
             </div>
 

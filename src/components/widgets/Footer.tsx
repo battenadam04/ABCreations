@@ -52,7 +52,7 @@ const Footer = () => {
             </div>
           ))}
         </div>
-        <div className="py-6 md:flex md:items-center md:justify-between md:py-8">
+        <div className="py-6 md:flex md:items-right md:justify-between md:py-8">
           <ul className="mb-4 -ml-2 flex md:order-1 md:ml-4 md:mb-0">
             {socials.map(({ label, icon: Icon, href }, index) => (
               <li key={`item-social-${index}`}>

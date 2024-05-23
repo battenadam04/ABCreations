@@ -161,7 +161,7 @@ type Testimonial = {
   isTestimonialUp?: boolean;
   hasDividerLine?: boolean;
   name?: string;
-  job?: string;
+  platform?: string;
   image?: Image;
   href?: string;
   containerClass?: string;
@@ -170,7 +170,7 @@ type Testimonial = {
   dataClass?: string;
   nameJobClass?: string;
   nameClass?: string;
-  jobClass?: string;
+  platformClass?: string;
   testimonialClass?: string;
 };
 
@@ -239,6 +239,7 @@ type HeroProps = {
   tagline?: string;
   callToAction?: CallToActionType;
   callToAction2?: CallToActionType;
+  callToAction3?: CallToActionType;
   image?: Image;
 };
 

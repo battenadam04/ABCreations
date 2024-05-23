@@ -1,6 +1,6 @@
-# ABCreations
+# ABCreativeLabs
 
-**ABCreations** is a template for displaying Amazon content that directs users towards the same content on Amazon sites.
+**ABCreativeLabs** is a template for displaying Amazon content that directs users towards the same content on Amazon sites.
 
 ## Features
 

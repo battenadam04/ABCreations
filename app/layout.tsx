@@ -9,6 +9,7 @@ import Footer2 from '~/components/widgets/Footer2';
 
 import { Inter as CustomFont } from 'next/font/google';
 import '~/assets/styles/base.css';
+import Footer from '~/components/widgets/Footer';
 
 const customFont = CustomFont({ subsets: ['latin'], variable: '--font-custom' });
 
@@ -36,7 +37,7 @@ export default function RootLayout({ children }: LayoutProps) {
           {/* <Announcement /> */}
           <Header />
           <main>{children}</main>
-          <Footer2 />
+          <Footer />
         </Providers>
       </body>
     </html>

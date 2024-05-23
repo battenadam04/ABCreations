@@ -1,5 +1,5 @@
-import { IconClock, IconHeadset, IconHelp, IconMapPin, IconMessages, IconPhoneCall } from '@tabler/icons-react';
-import { ContactProps, FeaturesProps } from '~/shared/types';
+import { IconClock, IconMapPin, IconPhoneCall } from '@tabler/icons-react';
+import { ContactProps } from '~/shared/types';
 import { HeroProps } from '~/shared/types';
 
 // Hero data on Contact page *******************
@@ -7,11 +7,10 @@ export const heroContact: HeroProps = {
   title: 'Get in touch with us',
   subtitle: (
     <>
-      <span className="hidden md:inline">{`Thank you for considering us for your project! We're excited to hear from you.`}</span>{' '}
-      {`Our team can assist you in building your dream website.`}
+      <span className="hidden md:inline">{`Thank you for visiting AB Creative Labs! We're excited to hear from you.`}</span>{' '}
+      {`Our team can assist you in any query you may have.`}
     </>
   ),
-  tagline: 'Demo Contact Page',
 };
 
 // Contact data on Contact page *******************
@@ -29,19 +28,9 @@ export const contact2Contact: ContactProps = {
   },
   items: [
     {
-      title: 'Our Address',
-      description: ['1230 Maecenas Street Donec Road', 'New York, EEUU'],
-      icon: IconMapPin,
-    },
-    {
       title: 'Contact',
-      description: ['Mobile: +1 (123) 456-7890', 'Mail: tailnext@gmail.com'],
+      description: ['Mail: aidenblakekdp@outlook.com'],
       icon: IconPhoneCall,
-    },
-    {
-      title: 'Working hours',
-      description: ['Monday - Friday: 08:00 - 17:00', 'Saturday & Sunday: 08:00 - 12:00'],
-      icon: IconClock,
     },
   ],
   form: {
@@ -76,13 +65,13 @@ export const contact2Contact: ContactProps = {
           label: 'General inquiries',
         },
         {
-          label: 'Technical help',
+          label: 'Working together',
         },
         {
-          label: 'Claims',
+          label: 'Copyright',
         },
         {
-          label: 'Others',
+          label: 'Other',
         },
       ],
     },
@@ -99,7 +88,7 @@ export const contact2Contact: ContactProps = {
         value: '',
       },
       {
-        label: 'Do you want to receive monthly updates by email?',
+        label: 'I do not want to be included in your monthly newsletter',
         value: '',
       },
     ],
@@ -108,42 +97,4 @@ export const contact2Contact: ContactProps = {
       type: 'submit',
     },
   },
-};
-
-// Feature2 data on Contact page *******************
-export const features2Contact: FeaturesProps = {
-  columns: 3,
-  header: {
-    title: 'Support Center',
-    subtitle: 'Looking for something in particular?',
-  },
-  items: [
-    {
-      title: 'Have a question?',
-      description: 'See our frequently asked questions',
-      icon: IconHelp,
-      callToAction: {
-        text: 'Go to FAQ page',
-        href: '/faqs',
-      },
-    },
-    {
-      title: 'Chat with us',
-      description: 'Live chat with our support team',
-      icon: IconMessages,
-      callToAction: {
-        text: 'Write to us',
-        href: '/',
-      },
-    },
-    {
-      title: 'Get help',
-      description: 'Speak to our team today',
-      icon: IconHeadset,
-      callToAction: {
-        text: 'Call us',
-        href: '/',
-      },
-    },
-  ],
 };

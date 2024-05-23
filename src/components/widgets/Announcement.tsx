@@ -9,8 +9,7 @@ const Announcement = () => {
       <span className="bg-blue-800 py-0.5 px-1 text-xs font-semibold">{title}</span>{' '}
       {callToAction && callToAction.text && callToAction.href && (
         <a
-          href={callToAction.href}
-          target="_blank"
+          href={callToAction.href}          
           rel="noreferrer noopened"
           className="cursor-pointer text-gray-100 hover:underline"
         >
@@ -20,7 +19,6 @@ const Announcement = () => {
       {callToAction2 && callToAction2.text && callToAction2.href && (
         <a
           href={callToAction2.href}
-          target="_blank"
           rel="noreferrer"
           className="float-right"
           title={callToAction2.text}

@@ -13,7 +13,6 @@ const CTA = ({ callToAction, containerClass, linkClass, iconClass }: LinkOrButto
             <Link
               className={twMerge('inline-flex items-center justify-center w-full sm:mb-0', linkClass)}
               href={href}
-              target="_blank"
               rel="noopener noreferrer"
             >
               {Icon && (

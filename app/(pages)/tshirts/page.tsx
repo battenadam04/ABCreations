@@ -1,36 +1,30 @@
-import { Metadata } from 'next';
-import CallToAction from '~/components/widgets/CallToAction';
-import Content from '~/components/widgets/Content';
-import Features2 from '~/components/widgets/Features2';
-import Features4 from '~/components/widgets/Features4';
+import type { Metadata } from 'next';
+
 import Hero from '~/components/widgets/Hero';
-import Testimonials from '~/components/widgets/Testimonials';
-import {
-  callToActionServices,
-  contentServicesOne,
-  contentServicesTwo,
-  faqsServices,
-  features2Services,
-  features4Services,
-  heroServices,
-  testimonialsServices,
-} from '~/shared/data/pages/tShirts.data';
+import Link from 'next/link';
+import Image from 'next/image';
+import { heroTshirts } from '~/shared/data/pages/tShirts.data';
+import { tshirtsContent } from '~/content/tshirts/tshirts';
 
 export const metadata: Metadata = {
   title: 'T-shirts',
 };
 
-const Page = () => {
+const Page = async () => {
   return (
-    <>
-      <Hero {...heroServices} />
-      <Features2 {...features2Services} />
-      <Content {...contentServicesOne} />
-      <Content {...contentServicesTwo} />
-      <Features4 {...features4Services} />
-      <Testimonials {...testimonialsServices} />
-      <CallToAction {...callToActionServices} />
-    </>
+    <section className="mx-auto max-w-3xl px-6 py-12 sm:px-6 sm:py-16 lg:py-20">
+      <Hero {...heroTshirts} />
+      <div className="grid grid-cols-1 gap-6  p-4 md:p-0 lg:grid-cols-2">
+        {tshirtsContent.map(({ url, title, image }: { url: string, title: string, image: string }) => (
+          <div key={url} className="flex flex-col overflow-hidden rounded-xl border border-gray-200 shadow-lg">
+            <Link href={url}>
+              <Image width={650} height={340} alt={title} src={`${image}`} />
+              <h2 className="p-4 font-bold">{title}</h2>
+            </Link>
+          </div>
+        ))}
+      </div>
+    </section>
   );
 };
 

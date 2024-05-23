@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { useForm } from 'react-hook-form';
 import { twMerge } from 'tailwind-merge';
 import { FormProps } from '../../shared/types';
 
@@ -51,8 +52,25 @@ const Form = ({
     });
   };
 
+
+  const { register, handleSubmit, formState: { errors } } = useForm();
+
+  const onSubmit = async (data: any) => {
+    console.log(data);
+    // Call your API route to send the email
+    const res = await fetch('/api/sendmail', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    });
+    const result = await res.json();
+    console.log(result);
+  };
+
   return (
-    <form id="contactForm" className={twMerge('', containerClass)}>
+    <form id="contactForm" className={twMerge('', containerClass)} onSubmit={handleSubmit(onSubmit)}>
       {title && <h2 className={`${description ? 'mb-2' : 'mb-4'} text-2xl font-bold`}>{title}</h2>}
       {description && <p className="mb-4">{description}</p>}
       <div className="mb-6">

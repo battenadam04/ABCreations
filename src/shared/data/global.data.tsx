@@ -25,34 +25,22 @@ export const announcementData: AnnouncementProps = {
 export const headerData: HeaderProps = {
   links: [
     {
-      label: 'Pages',
+      label: 'Products',
       icon: IconChevronDown,
       links: [
         {
           label: 'T-shirts',
-          href: '/tShirts',
+          href: '/tshirts',
         },
         {
           label: 'Books',
           href: '/books',
         },
-        {
-          label: 'About us',
-          href: '/about',
-        },
-        {
-          label: 'Contact us',
-          href: '/contact',
-        },
-        {
-          label: 'Terms & Conditions',
-          href: '/terms',
-        },
-        {
-          label: 'Privacy Policy',
-          href: '/privacy',
-        },
       ],
+    },
+    {
+      label: 'About us',
+      href: '/about',
     },
     {
       label: 'Blog',
@@ -78,7 +66,7 @@ export const headerData: HeaderProps = {
 
 // Footer data
 export const footerData: FooterProps = {
-  title: 'TailNext',
+  title: 'AB Creation Labs',
   links: [
     {
       label: 'Terms & Conditions',
@@ -94,32 +82,12 @@ export const footerData: FooterProps = {
       title: 'Product',
       links: [
         {
-          label: 'Features',
-          href: '/',
+          label: 'T-shirts',
+          href: '/tshirts',
         },
         {
-          label: 'Security',
-          href: '/',
-        },
-        {
-          label: 'Team',
-          href: '/',
-        },
-        {
-          label: 'Enterprise',
-          href: '/',
-        },
-        {
-          label: 'Customer stories',
-          href: '/',
-        },
-        {
-          label: 'Pricing',
-          href: '/pricing',
-        },
-        {
-          label: 'Resources',
-          href: '/',
+          label: 'Books',
+          href: '/books',
         },
       ],
     },
@@ -127,11 +95,11 @@ export const footerData: FooterProps = {
       title: 'Platform',
       links: [
         {
-          label: 'Developer API',
+          label: 'Amazon',
           href: '/',
         },
         {
-          label: 'Partners',
+          label: 'goodreads',
           href: '/',
         },
       ],
@@ -140,24 +108,8 @@ export const footerData: FooterProps = {
       title: 'Support',
       links: [
         {
-          label: 'Docs',
-          href: '/',
-        },
-        {
-          label: 'Community Forum',
-          href: '/',
-        },
-        {
-          label: 'Professional Services',
-          href: '/',
-        },
-        {
-          label: 'Skills',
-          href: '/',
-        },
-        {
-          label: 'Status',
-          href: '/',
+          label: 'Contact',
+          href: '/contact',
         },
       ],
     },
@@ -166,31 +118,11 @@ export const footerData: FooterProps = {
       links: [
         {
           label: 'About',
-          href: '/',
+          href: '/about',
         },
         {
           label: 'Blog',
           href: '/blog',
-        },
-        {
-          label: 'Careers',
-          href: '/',
-        },
-        {
-          label: 'Press',
-          href: '/',
-        },
-        {
-          label: 'Inclusion',
-          href: '/',
-        },
-        {
-          label: 'Social Impact',
-          href: '/',
-        },
-        {
-          label: 'Shop',
-          href: '/',
         },
       ],
     },
@@ -206,9 +138,9 @@ export const footerData: FooterProps = {
     <div className="mr-4 text-sm dark:text-slate-400">
       <span className="float-left mr-1.5 h-5 w-5 rounded-sm bg-[url(https://onwidget.com/favicon/favicon-32x32.png)] bg-cover md:-mt-0.5 md:h-6 md:w-6"></span>
       Made by{' '}
-      <a className="text-blue-600 hover:underline dark:text-gray-200" href="https://onwidget.com/">
+      <a className="text-blue-600 hover:underline dark:text-gray-200" href="https://www.linkedin.com/in/adam-batten-92850243/">
         {' '}
-        onWidget
+        Adam Batten
       </a>{' '}
       · All rights reserved.
     </div>
@@ -229,15 +161,7 @@ export const footerData2: FooterProps = {
   ],
   columns: [
     {
-      title: 'Address',
-      texts: ['51 Phasellus Avenue Maecenas', 'Aliquam, AQ 52098'],
-    },
-    {
-      title: 'Phone',
-      texts: ['Reception: +105 123 4567', 'Office: +107 235 7890'],
-    },
-    {
-      title: 'Email',
+      title: 'Pages',
       texts: ['Office: info@example.com', 'Site: https://example.com'],
     },
   ],
@@ -250,14 +174,16 @@ export const footerData2: FooterProps = {
   ],
   footNote: (
     <div className="mr-4 text-sm">
-      <span className="float-left mr-1.5 h-5 w-5 rounded-sm bg-[url(https://onwidget.com/favicon/favicon-32x32.png)] bg-cover md:-mt-0.5 md:h-6 md:w-6"></span>
+      <span className="float-left mr-1.5 h-5 w-5 rounded-sm bg-[url(51 Phasellus Avenue Maecenas
+
+)] bg-cover md:-mt-0.5 md:h-6 md:w-6"></span>
       Made by{' '}
       <a
         className="font-semibold text-slate-900 dark:text-gray-200 hover:text-blue-600 hover:underline dark:hover:text-blue-600"
         href="https://onwidget.com/"
       >
         {' '}
-        onWidget
+        Adam Batten
       </a>{' '}
       · All rights reserved.
     </div>

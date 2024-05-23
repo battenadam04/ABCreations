@@ -2,14 +2,14 @@ import md from 'markdown-it';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
 
-import { findPostBySlug, findLatestPosts } from '~/utils/posts';
+import { findContentBySlug, findLatestContent } from '~/utils/content';
 
 export const dynamicParams = false;
 
 const getFormattedDate = (date) => date;
 
 export async function generateMetadata({ params}) {
-  const post = await findPostBySlug(params.slug);
+  const post = await findContentBySlug(params.slug);
   if (!post) {
     return notFound();
   }
@@ -17,11 +17,11 @@ export async function generateMetadata({ params}) {
 }
 
 export async function generateStaticParams() {
-  return (await findLatestPosts()).map(({ slug }) => ({ slug }));
+  return (await findLatestContent()).map(({ slug }) => ({ slug }));
 }
 
 export default async function Page({ params }) {
-  const post = await findPostBySlug(params.slug);
+  const post = await findContentBySlug(params.slug);
 
   if (!post) {
     return notFound();

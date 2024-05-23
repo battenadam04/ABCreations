@@ -8,7 +8,7 @@ const SocialProof = ({ images, id, hasBackground = false }: SocialProofProps) =>
       {images &&
         images.map(({ src, alt, link }, index) => (
           <div key={`item-social-proof-${index}`}>
-            <a href={link} target="_blank" rel="noopener">
+            <a href={link} rel="noopener">
               <Image
                 src={src}
                 alt={alt}

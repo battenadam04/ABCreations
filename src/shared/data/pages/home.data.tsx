@@ -5,15 +5,16 @@ import {
   IconBrandTailwind,
   IconBrandTwitter,
   IconBulb,
-  IconCheck,
   IconClock,
   IconComponents,
   IconDownload,
   IconListCheck,
   IconMail,
   IconMapPin,
+  IconNotebook,
   IconPhoneCall,
   IconRocket,
+  IconShirt,
 } from '@tabler/icons-react';
 import {
   CallToActionProps,
@@ -41,31 +42,26 @@ import gasImg from '~/assets/images/gas.jpg';
 export const heroHome: HeroProps = {
   title: (
     <>
-      Free template for <span className="hidden md:inline">starts a website using</span> <span>Next.js</span> +{' '}
-      <span className="sm:whitespace-nowrap">Tailwind CSS</span>
+      Delivering Bespoke Content with the Aim to Expand Across Multiple Platforms
     </>
   ),
   subtitle: (
     <>
       <span className="hidden md:inline">
-        <span className="font-semibold underline decoration-primary-600 decoration-wavy decoration-1 underline-offset-2">
-          TailNext
-        </span>{' '}
-        is a production ready template to start your new website using <em>Next.js</em> + <em>Tailwind CSS</em>.
-      </span>{' '}
-      It has been designed following Best Practices, SEO, Accessibility, Dark Mode, great Page Speed, image
-      optimization.
+      Explore AB Creative Labs for exclusive KDP books and custom-designed t-shirts, all available directly on Amazon. Dive into our unique collection and find your next favorite read or wardrobe addition with just a click!
+      </span>
     </>
   ),
   callToAction: {
-    text: 'Get template',
-    href: 'https://github.com/onwidget/tailnext',
-    icon: IconDownload,
+    text: 'Books',
+    href: '/books',
+    icon: IconNotebook,
     targetBlank: true,
   },
   callToAction2: {
-    text: 'Learn more',
-    href: '/',
+    text: 'T-Shirts',
+    href: '/tshirts',
+    icon: IconShirt,
   },
   image: {
     src: heroImg,
@@ -73,33 +69,6 @@ export const heroHome: HeroProps = {
   },
 };
 
-// SocialProof data on Home page *******************
-export const socialProofHome: SocialProofProps = {
-  id: 'socialProof-on-home',
-  hasBackground: false,
-  images: [
-    {
-      link: 'https://nextjs.org/',
-      src: nextJsLogo,
-      alt: 'NextJs Logo',
-    },
-    {
-      link: 'https://react.dev/',
-      src: reactLogo,
-      alt: 'React Logo',
-    },
-    {
-      link: 'https://tailwindcss.com/',
-      src: tailwindCssLogo,
-      alt: 'Tailwind CSS Logo',
-    },
-    {
-      link: 'https://www.typescriptlang.org/',
-      src: typescriptLogo,
-      alt: 'Typescript Logo',
-    },
-  ],
-};
 
 // Features data on Home page *******************
 export const featuresHome: FeaturesProps = {
@@ -185,27 +154,26 @@ export const contentHomeOne: ContentProps = {
   id: 'contentOne-on-home-one',
   hasBackground: true,
   header: {
-    title: 'Aliquip definiebas ad est',
-    subtitle: 'Quando cetero his ne, eum admodum sapientem ut',
-    tagline: 'Content',
+    title: 'Our Product',
+    subtitle: 'Why choose our content?',
   },
   content:
-    'Ne dicta praesent ocurreret has, diam theophrastus at pro. Eos etiam regione ut, persius eripuit quo id. Sit te euismod tacimates.',
+    'Whether you are looking to express yourself through fashion or seeking your next great read, we have something special just for you. Explore our growing collections and discover how our bespoke products can add a touch of personal flair to your everyday life.',
   items: [
     {
-      title: 'Per ei quaeque sensibus',
+      title: 'Bespoke Designs',
       description:
-        'Ex usu illum iudico molestie. Pro ne agam facete mediocritatem, ridens labore facete mea ei. Pro id apeirian dignissim.',
+        'Unleash your personal style with our Bespoke Designs. Each product is crafted to reflect unique tastes and interests, making every purchase a true expression of individuality.',
     },
     {
-      title: 'Cu imperdiet posidonium sed',
+      title: 'Curated Selection',
       description:
-        'Amet utinam aliquando ut mea, malis admodum ocurreret nec et, elit tibique cu nec. Nec ex maluisset inciderint, ex quis.',
+        'Dive into our Curated Selection of books, meticulously chosen to cater to diverse tastes and interests. Find your next favorite read that speaks to your soul, all in one place.',
     },
     {
-      title: 'Nulla omittam sadipscing mel ne',
+      title: 'High Quality and in Depth Research',
       description:
-        'At sed possim oporteat probatus, justo graece ne nec, minim commodo legimus ut vix. Ut eos iudico quando soleat, nam modus.',
+        'Experience the depth of our High Quality and In-Depth Research with every book you read and every t-shirt you wear. Our products are developed with meticulous attention to detail, ensuring a premium experience with rich, informed content.',
     },
   ],
   image: {
@@ -221,25 +189,19 @@ export const contentHomeTwo: ContentProps = {
   id: 'contentOne-on-home-two',
   hasBackground: true,
   content:
-    'Per odio fabellas consulatu cu. Utroque detracto mel ea, quo te latine theophrastus. Ea his tale nib dissentias, mei exerci tamquam euripidis cu.',
+    'We are dedicated to providing you with an outstanding shopping experience by focusing on key aspects that matter most. Discover how we ensure satisfaction through every facet of our service.',
   items: [
     {
-      title: 'Per ei quaeque sensibus',
+      title: 'Engaging with Customer feedback',
     },
     {
-      title: 'Cu imperdiet posidonium sed',
+      title: 'High Quality Ratings',
     },
     {
-      title: 'Nulla omittam sadipscing mel ne',
+      title: 'Continuous Product Development',
     },
     {
-      title: 'Per ei quaeque sensibus',
-    },
-    {
-      title: 'Cu imperdiet posidonium sed',
-    },
-    {
-      title: 'Nulla omittam sadipscing mel ne',
+      title: 'Competitive Prices',
     },
   ],
   image: {
@@ -250,43 +212,6 @@ export const contentHomeTwo: ContentProps = {
   isAfterContent: true,
 };
 
-// Steps data on Home page *******************
-export const stepsHome: StepsProps = {
-  id: 'steps-on-home',
-  hasBackground: false,
-  isReversed: false,
-  isImageDisplayed: true,
-  image: {
-    src: gasImg,
-    alt: 'Steps image',
-  },
-  header: {
-    title: 'Sed ac magna sit amet risus tristique interdum.',
-  },
-  items: [
-    {
-      title: 'Step 1',
-      description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sagittis, quam nec venenatis lobortis, mirisus tempus nulla, sed porttitor est nibh at nulla. Praesent placerat enim ut ex tincidunt vehicula. Fusce sit amet dui tellus.',
-      icon: IconArrowDown,
-    },
-    {
-      title: 'Step 2',
-      description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sagittis, quam nec venenatis lobortis, mirisus tempus nulla, sed porttitor est nibh at nulla.',
-      icon: IconArrowDown,
-    },
-    {
-      title: 'Step 3',
-      description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sagittis, quam nec venenatis lobortis, mirisus tempus nulla, sed porttitor est nibh at nulla.',
-      icon: IconArrowDown,
-    },
-    {
-      title: 'Ready!',
-    },
-  ],
-};
 
 // Testimonials data on Home page *******************
 export const testimonialsHome: TestimonialsProps = {
@@ -295,68 +220,68 @@ export const testimonialsHome: TestimonialsProps = {
   header: {
     title: 'What our customers say about us',
     subtitle:
-      'Etiam sed odio et dolor auctor gravida. Curabitur tincidunt elit non risus pharetra sodales. Etiam sit amet mattis massa.',
+      'Discover the impact of AB Creative Labs through the words of our satisfied customers. Read their testimonials to see how our unique KDP books and custom t-shirts have added value and joy to their lives.',
   },
   testimonials: [
     {
-      name: 'Tayla Kirsten',
-      job: 'Marketing Manager',
-      testimonial: `I'm impressed by the speed and performance of these templates. My website now loads in the blink of an eye, significantly enhancing my visitors' experience. Thanks to TailNext, my online business is thriving.`,
-      image: {
-        src: 'https://images.unsplash.com/photo-1619734086067-24bf8889ea7d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1180&q=80',
-        alt: 'Tayla Kirsten',
-      },
-      href: '/',
-    },
-    {
-      name: 'Silver Jordan',
-      job: 'Senior Marketer',
-      testimonial: `I had never found it so easy to customize a website. TailNext's templates are incredibly flexible, and with Tailwind CSS, I've managed to give my website the look and feel I always wanted. Highly recommended!`,
-      image: {
-        src: 'https://images.unsplash.com/photo-1565049786474-1dea82a8b995?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1180&q=80',
-        alt: 'Silver Jordan',
-      },
-      href: '/',
-    },
-    {
-      name: 'Kelsey Arden',
-      job: 'Co-Founder & CEO',
-      testimonial: `As a beginner in web development, I really needed clear guidance. Tailnext made it possible. I was able to install and customize my website seamlessly, and I'm thrilled with the results!`,
-      image: {
-        src: 'https://images.unsplash.com/photo-1659057106920-da022cfbc0cd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1180&q=80',
-        alt: 'Kelsey Arden',
-      },
-      href: '/',
-    },
-    {
-      name: 'Sarah Johnson',
-      job: 'Business Owner',
-      testimonial: `They've not only saved me a ton of time but have also made my websites look incredibly professional. The level of detail and thought that went into designing these templates is truly impressive.`,
+      name: 'Rutherford',
+      platform: 'Amazon',
+      testimonial: `From the first chapter, the book addresses the everyday anxieties and challenges fathers face today, offering reassurance and actionable advice. With a warm and engaging tone, the author invites fathers into a conversation about the pivotal role they play in their children’s lives, providing both inspiration and instruction on how to fulfill this role more effectively.`,
       image: {
         src: 'https://images.unsplash.com/photo-1572417884940-c24659be6068?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1180&q=80',
-        alt: 'Sarah Johnson',
+        alt: 'Rutherford',
+      },
+      href: 'https://www.amazon.com/gp/customer-reviews/RXVD8BZF67246/ref=cm_cr_dp_d_rvw_ttl?ie=UTF8&ASIN=B0CQ6TCPJZ',
+    },
+    {
+      name: 'Cathy Lynn Brooks',
+      platform: 'Amazon',
+      testimonial: `This is a comprehensive guide to good parenting. I liked the takeaway section at the end of each chapter, summarizing the key elements. There is plenty of good advice. Some dads might need this help, since many children grow up without father figures or with abusive parents. This book is for dads who want to break the cycle and learn new techniques.`,
+      image: {
+        src: 'https://images.unsplash.com/photo-1659057106920-da022cfbc0cd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1180&q=80',
+        alt: 'Cathy Lynn Brooks',
+      },
+      href: 'https://www.amazon.com/gp/customer-reviews/R1FYIFI0ZSRP9H/ref=cm_cr_dp_d_rvw_ttl?ie=UTF8&ASIN=B0CQ6TCPJZ',
+    },
+    {
+      name: 'Andreas Baku',
+      platform: 'Amazon',
+      testimonial: `I have learned a lot over the course of the last 2 months about the health of my gut or the gut in general. We must pay attention. This book only confirms all I 've learned and then some. I love how it's all broken down and explained how it all works. I am thrilled I found this book and keep it close to remind myself and what to do and what not to do. It's a must read. Read it! It might save your life.`,
+      image: {
+        src: 'https://images.unsplash.com/photo-1659057106920-da022cfbc0cd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1180&q=80',
+        alt: 'Andreas Baku',
       },
       href: '/',
     },
     {
-      name: 'Keith Young',
-      job: 'Freelance Developer',
-      testimonial: `The clean code and integration with Next.js make my projects a breeze. Plus, the responsive design ensures that my clients' websites look amazing on any device. These templates have become my secret weapon for success!`,
+      name: 'Leroy Malloy',
+      platform: 'goodreads',
+      testimonial: `Dad's First Steps by Aiden Blake is nothing short of a beacon of light for new fathers embarking on the exhilarating journey of parenthood. This invaluable guide offers a comprehensive roadmap, brimming with practical advice, heartfelt anecdotes, and profound insights, to help fathers nurture strong bonds, reduce stress, and cultivate healthier relationships with their children.`,
+      image: {
+        src: 'https://images.unsplash.com/photo-1572417884940-c24659be6068?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1180&q=80',
+        alt: 'Leroy Malloy',
+      },
+      href: 'https://www.goodreads.com/review/show/6293652160',
+    },
+    {
+      name: 'PWGee',
+      platform: 'goodreads',
+      testimonial: `Dad’s First Steps gives great advice for new fathers as they try to find their way with their new role. The book is full of practical wisdom interspersed with fun and heart-warming anecdotes that illustrate the advice.`,
       image: {
         src: 'https://images.unsplash.com/photo-1694287877106-ee22f764aef1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1180&q=80',
-        alt: 'Keith Young',
+        alt: 'PWGee',
       },
-      href: '/',
+      href: 'https://www.goodreads.com/review/show/6461363353',
     },
     {
-      name: 'Lisa Gordon',
-      job: 'Project Manager',
-      testimonial: `Their templates are not only stunning but also user-friendly. The support I received from their community has been exceptional. I'm proud to say that I've built my dream website with TailNext.`,
+      name: 'LC',
+      platform: 'Amazon',
+      testimonial: `Impressed by the One Question a Day Journal for Kids. It offers a daily prompt to inspire imagination and self-reflection. It's a great tool for nurturing creativity and self-expression in children. Plus, it serves as a meaningful keepsake to cherish memories of their childhood journey. Would recommend as a thoughtful gift option.`,
       image: {
         src: 'https://images.unsplash.com/photo-1665984867752-6370ab5ae35e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1180&q=80',
-        alt: 'Lisa Gordon',
+        alt: 'LC',
       },
-      href: '/',
+      href: 'https://www.amazon.com/gp/customer-reviews/RTI9IHUDGBLUR/ref=cm_cr_dp_d_rvw_ttl?ie=UTF8&ASIN=B0CMZ6N45L',
     },
   ],
 };
@@ -657,45 +582,4 @@ export const contactHome: ContactProps = {
       type: 'submit',
     },
   },
-};
-
-// CallToAction data *******************
-export const callToAction2Home: CallToActionProps = {
-  title: 'Next.js + Tailwind CSS',
-  subtitle:
-    'Aliquam sodales porttitor lacus ac tristique. Etiam posuere elit at leo feugiat sodales. Sed ac mauris quis sem tempor condimentum non at metus.',
-  callToAction: {
-    text: 'Get template',
-    href: 'https://github.com/onwidget/tailnext',
-    icon: IconDownload,
-  },
-  items: [
-    {
-      title: 'Get template',
-      description: 'Aliquam sodales est lectus, quis.',
-      href: 'https://github.com/onwidget/tailnext',
-    },
-    {
-      title: 'Learn more',
-      description: 'Class aptent taciti sociosqu ad litora torquent per conubia.',
-      href: '/',
-    },
-    {
-      title: 'Subscribe',
-      description: 'Morbi orci nunc, euismod ac dui id, convallis.',
-      form: {
-        icon: IconMail,
-        input: {
-          type: 'email',
-          name: 'email',
-          autocomplete: 'email',
-          placeholder: 'Enter your email address',
-        },
-        btn: {
-          title: 'Subscribe',
-          type: 'submit',
-        },
-      },
-    },
-  ],
 };

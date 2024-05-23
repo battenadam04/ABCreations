@@ -17,7 +17,7 @@ const Testimonials = ({
     {header && <Headline header={header} titleClass="text-2xl sm:text-3xl" />}
     <div className="flex items-stretch justify-center">
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
-        {testimonials.map(({ name, job, testimonial, image, href }, index) => (
+        {testimonials.map(({ name, platform, testimonial, image, href }, index) => (
           <>
             {testimonial && (
               <div
@@ -29,10 +29,10 @@ const Testimonials = ({
                 }`}
               >
                 {!callToAction && href ? (
-                  <Link href={href} target="_blank" rel="noopener noreferrer">
+                  <Link href={href} rel="noopener noreferrer">
                     <ItemTestimonial
                       name={name}
-                      job={job}
+                      platform={platform}
                       testimonial={testimonial}
                       isTestimonialUp={isTestimonialUp}
                       hasDividerLine={true}
@@ -42,14 +42,14 @@ const Testimonials = ({
                       containerClass="h-full"
                       panelClass="justify-between items-stretch w-full h-full"
                       nameJobClass="text-left"
-                      jobClass="text-sm"
+                      platformClass="text-sm"
                       imageClass="mr-4 h-10 w-10 rounded-full"
                     />
                   </Link>
                 ) : (
                   <ItemTestimonial
                     name={name}
-                    job={job}
+                    platform={platform}
                     testimonial={testimonial}
                     isTestimonialUp={isTestimonialUp}
                     hasDividerLine={true}
@@ -59,7 +59,7 @@ const Testimonials = ({
                     containerClass="h-full"
                     panelClass="justify-between items-stretch w-full h-full"
                     nameJobClass="text-left"
-                    jobClass="text-sm"
+                    platformClass="text-sm"
                     imageClass="mr-4 h-10 w-10 rounded-full"
                   />
                 )}
