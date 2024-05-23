@@ -17,13 +17,13 @@ export async function POST(req: NextRequest, res: NextResponse) {
   const mailOptions: Mail.Options = {
     from: process.env.EMAIL_USERNAME,
     to: process.env.EMAIL_USERNAME,
-    // cc: email, (uncomment this line if you want to send a copy to the sender)
+    replyTo: email,
     subject: `ABCreativeLabs message from ${name + ' ' + lastName} (${email})`,
     text: message,
   };
 
-  const sendMailPromise = () =>
-    new Promise<string>((resolve, reject) => {
+  const sendMailPromise = async () =>
+    await new Promise<string>((resolve, reject) => {
       transporter.sendMail(mailOptions, function (err) {
         if (!err) {
           resolve('Email sent');

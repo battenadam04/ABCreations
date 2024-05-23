@@ -53,7 +53,7 @@ const Form = ({
   };
 
 
-  const { register, handleSubmit, getValues, formState: { errors } } = useForm();
+  const { register, handleSubmit, reset, formState: { errors } } = useForm();
 
   const onSubmit = (data: any) => {
     fetch('/api/sendmail', {
@@ -63,6 +63,7 @@ const Form = ({
       },
       body: JSON.stringify(data),
     });
+    reset();
   };
 
   return (

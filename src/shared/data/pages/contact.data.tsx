@@ -34,7 +34,6 @@ export const contact2Contact: ContactProps = {
     },
   ],
   form: {
-    title: 'Ready to Get Started?',
     inputs: [
       {
         type: 'text',
