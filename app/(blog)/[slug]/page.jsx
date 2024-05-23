@@ -1,6 +1,7 @@
 import md from 'markdown-it';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
+import { contentDir } from '~/utils/constants';
 
 import { findContentBySlug, findLatestContent } from '~/utils/content';
 
@@ -17,7 +18,7 @@ export async function generateMetadata({ params}) {
 }
 
 export async function generateStaticParams() {
-  return (await findLatestContent()).map(({ slug }) => ({ slug }));
+  return (await findLatestContent(contentDir.BLOG_DIR)).map(({ slug }) => ({ slug }));
 }
 
 export default async function Page({ params }) {

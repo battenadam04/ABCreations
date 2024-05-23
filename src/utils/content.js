@@ -2,11 +2,11 @@ import fs from 'fs';
 import matter from 'gray-matter';
 import { join } from 'path';
 
-export const findContentBySlug = async (slug) => {
+export const findContentBySlug = async (contentType, slug) => {
   if (!slug) return null;
 
   try {
-    const readFile = fs.readFileSync(join(BLOG_DIR, `${slug}.md`), 'utf-8');
+    const readFile = fs.readFileSync(join('src/content/' + contentType, `${slug}.md`), 'utf-8');
     const { data: frontmatter, content } = matter(readFile);
     return {
       slug,
@@ -26,7 +26,7 @@ const load = (contentType) => {
       .filter((filename) => filename.endsWith('.md'))
       .map(async (filename) => {
         const slug = filename.replace('.md', '');
-        return await findContentBySlug(slug);
+        return await findContentBySlug(contentType, slug);
       }),
   );
 
@@ -41,9 +41,9 @@ export const fetchContent = async (contentType) => {
   return await _content;
 };
 
-export const findLatestContent = async ({ count } = {}) => {
+export const findLatestContent = async (contentType, count) => {
   const _count = count || 4;
-  const posts = await fetchPosts();
+  const posts = await fetchContent(contentType);
 
   return posts ? posts.slice(_count * -1) : [];
 };
