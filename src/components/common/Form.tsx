@@ -90,11 +90,11 @@ const Form = ({
                   value={inputValues[index]}
                   placeholder={placeholder}
                   className="mb-2 w-full rounded-md border border-gray-400 py-2 pl-2 pr-4 shadow-md dark:text-gray-300 sm:mb-0"
-                  {...register('name', {
+                  {...register(name as any, {
                     onChange: () => changeInputValueHandler
                   })}
                 />
-                <p>{errors?.['name']?.message}</p>
+                {errors.name &&(<p>{errors.name.message}</p>)}
               </div>
             ))}
         </div>
@@ -111,7 +111,7 @@ const Form = ({
                     value={`value${index}`}
                     checked={radioBtnValue === `value${index}`}
                     className="cursor-pointer"
-                    {...register(radioBtns.name, {
+                    {...register(radioBtns.name as any, {
                       onChange: () => changeRadioBtnsHandler
                     })}
                   />
@@ -152,7 +152,7 @@ const Form = ({
                   type="checkbox"
                   checked={checkedState[index]}
                   className="cursor-pointer"
-                  {...register(label, {
+                  {...register(label as any, {
                     onChange: () => changeCheckboxHandler(index)
                   })}
                 />
