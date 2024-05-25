@@ -79,6 +79,7 @@ type Radio = {
 };
 
 type RadioBtn = {
+  name: string,
   label?: string;
   radios: Array<Radio>;
 };

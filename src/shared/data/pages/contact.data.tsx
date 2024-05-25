@@ -58,6 +58,7 @@ export const contact2Contact: ContactProps = {
       },
     ],
     radioBtns: {
+      name: 'reason',
       label: 'What is the reason for your contact?',
       radios: [
         {
@@ -87,7 +88,7 @@ export const contact2Contact: ContactProps = {
         value: '',
       },
       {
-        label: 'I do not want to be included in your monthly newsletter',
+        label: 'I do not want my email saved for future promotions/ product releases',
         value: '',
       },
     ],

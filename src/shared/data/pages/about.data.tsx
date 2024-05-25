@@ -6,7 +6,7 @@ import {
   StepsProps,
   TestimonialsProps,
 } from '~/shared/types';
-import hero2Img from '~/assets/images/hero2.jpg';
+import aboutcompanypage from '~/assets/images/aboutcompanypage.png';
 import {
   IconAdjustments,
   IconAward,
@@ -43,7 +43,7 @@ export const hero2About: HeroProps = {
     href: '/contact',
   },
   image: {
-    src: hero2Img,
+    src: aboutcompanypage,
     alt: 'Hero ABCreativeLabs',
   },
 };

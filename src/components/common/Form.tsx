@@ -4,6 +4,8 @@ import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { twMerge } from 'tailwind-merge';
 import { FormProps } from '../../shared/types';
+import { contactSchema } from '~/shared/formValidation/contact.schema';
+import { yupResolver } from '@hookform/resolvers/yup';
 
 const Form = ({
   title,
@@ -53,7 +55,9 @@ const Form = ({
   };
 
 
-  const { register, handleSubmit, reset, formState: { errors } } = useForm();
+  const { register, handleSubmit, reset, formState: { errors } } = useForm({
+    resolver: yupResolver(contactSchema),
+  });
 
   const onSubmit = (data: any) => {
     fetch('/api/sendmail', {
@@ -86,10 +90,11 @@ const Form = ({
                   value={inputValues[index]}
                   placeholder={placeholder}
                   className="mb-2 w-full rounded-md border border-gray-400 py-2 pl-2 pr-4 shadow-md dark:text-gray-300 sm:mb-0"
-                  {...register(name as string, {
+                  {...register('name', {
                     onChange: () => changeInputValueHandler
                   })}
                 />
+                <p>{errors?.['name']?.message}</p>
               </div>
             ))}
         </div>
@@ -106,7 +111,7 @@ const Form = ({
                     value={`value${index}`}
                     checked={radioBtnValue === `value${index}`}
                     className="cursor-pointer"
-                    {...register(label as string, {
+                    {...register(radioBtns.name, {
                       onChange: () => changeRadioBtnsHandler
                     })}
                   />
@@ -131,7 +136,7 @@ const Form = ({
               value={textareaValues}
               placeholder={textarea.placeholder}
               className="mb-2 w-full rounded-md border border-gray-400 py-2 pl-2 pr-4 shadow-md dark:text-gray-300 sm:mb-0"
-              {...register(textarea.name as string, {
+              {...register(textarea.name as any, {
                 onChange: (e) => changeTextareaHandler(e)
               })}
             />
@@ -147,7 +152,7 @@ const Form = ({
                   type="checkbox"
                   checked={checkedState[index]}
                   className="cursor-pointer"
-                  {...register(label as string, {
+                  {...register(label, {
                     onChange: () => changeCheckboxHandler(index)
                   })}
                 />

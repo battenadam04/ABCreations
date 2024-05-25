@@ -1,5 +1,4 @@
 import {
-  IconArrowDown,
   IconArrowsRightLeft,
   IconBrandLinkedin,
   IconBrandTailwind,
@@ -7,7 +6,6 @@ import {
   IconBulb,
   IconClock,
   IconComponents,
-  IconDownload,
   IconListCheck,
   IconMail,
   IconMapPin,
@@ -17,26 +15,18 @@ import {
   IconShirt,
 } from '@tabler/icons-react';
 import {
-  CallToActionProps,
   ContactProps,
   ContentProps,
   FAQsProps,
   FeaturesProps,
   HeroProps,
   PricingProps,
-  SocialProofProps,
-  StepsProps,
   TeamProps,
   TestimonialsProps,
 } from '../../types';
-import heroImg from '~/assets/images/hero.jpg';
-import nextJsLogo from '~/assets/images/nextjs-logo.png';
-import reactLogo from '~/assets/images/react-logo.png';
-import tailwindCssLogo from '~/assets/images/tailwind-css-logo.png';
-import typescriptLogo from '~/assets/images/typescript-logo.png';
-import cameraFrontImg from '~/assets/images/camera-front.jpg';
-import cameraBackImg from '~/assets/images/camera-back.jpg';
-import gasImg from '~/assets/images/gas.jpg';
+import homepage from '~/assets/images/homepage.png';
+import homepage2 from '~/assets/images/homepage2.png';
+import homepage3 from '~/assets/images/homepage3.png';
 
 // Hero data on Home page *******************
 export const heroHome: HeroProps = {
@@ -64,7 +54,7 @@ export const heroHome: HeroProps = {
     icon: IconShirt,
   },
   image: {
-    src: heroImg,
+    src: homepage,
     alt: 'Hero TailNext',
   },
 };
@@ -177,7 +167,7 @@ export const contentHomeOne: ContentProps = {
     },
   ],
   image: {
-    src: cameraFrontImg,
+    src: homepage2,
     alt: 'Colorful Image',
   },
   isReversed: false,
@@ -205,7 +195,7 @@ export const contentHomeTwo: ContentProps = {
     },
   ],
   image: {
-    src: cameraBackImg,
+    src: homepage3,
     alt: 'Colorful Image',
   },
   isReversed: true,
