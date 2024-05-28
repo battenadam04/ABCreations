@@ -56,12 +56,7 @@ const CallToAction2 = ({ title, subtitle, items }: CallToActionProps) => (
             items.map(({ title, description, href, form }, index) => (
               <div key={`call-to-action-item-${index}`}>
                 {href ? (
-                  <a
-                    href={href}
-                    className="w-full sm:mb-0"
-                    rel="noopener noreferrer"
-                    key={`item-cta-${index}`}
-                  >
+                  <a href={href} className="w-full sm:mb-0" rel="noopener noreferrer" key={`item-cta-${index}`}>
                     <Card title={title} description={description} href={href} form={form} />
                   </a>
                 ) : (

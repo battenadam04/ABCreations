@@ -2,7 +2,7 @@ import Image from 'next/image';
 import { HeroProps } from '~/shared/types';
 import CTA from '../common/CTA';
 
-const Hero2 = ({ title, subtitle, tagline, callToAction, callToAction2,callToAction3, image }: HeroProps) => {
+const Hero2 = ({ title, subtitle, tagline, callToAction, callToAction2, callToAction3, image }: HeroProps) => {
   return (
     <section className="mt-[-72px] bg-primary-50 dark:bg-slate-800" id="heroTwo">
       <div className="mx-auto max-w-7xl px-4 pt-[72px] sm:px-6 md:flex md:h-screen 2xl:h-auto">

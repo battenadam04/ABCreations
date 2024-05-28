@@ -30,15 +30,12 @@ import homepage3 from '~/assets/images/homepage3.png';
 
 // Hero data on Home page *******************
 export const heroHome: HeroProps = {
-  title: (
-    <>
-      Delivering Bespoke Content with the Aim to Expand Across Multiple Platforms
-    </>
-  ),
+  title: <>Delivering Bespoke Content with the Aim to Expand Across Multiple Platforms</>,
   subtitle: (
     <>
       <span className="hidden md:inline">
-      Explore AB Creative Labs for exclusive KDP books and custom-designed t-shirts, all available directly on Amazon. Dive into our unique collection and find your next favorite read or wardrobe addition with just a click!
+        Explore AB Creative Labs for exclusive KDP books and custom-designed t-shirts, all available directly on Amazon.
+        Dive into our unique collection and find your next favorite read or wardrobe addition with just a click!
       </span>
     </>
   ),
@@ -58,7 +55,6 @@ export const heroHome: HeroProps = {
     alt: 'Hero TailNext',
   },
 };
-
 
 // Features data on Home page *******************
 export const featuresHome: FeaturesProps = {
@@ -201,7 +197,6 @@ export const contentHomeTwo: ContentProps = {
   isReversed: true,
   isAfterContent: true,
 };
-
 
 // Testimonials data on Home page *******************
 export const testimonialsHome: TestimonialsProps = {

@@ -28,5 +28,5 @@ module.exports = {
         hostname: 'm.media-amazon.com',
       },
     ],
-  }
+  },
 };

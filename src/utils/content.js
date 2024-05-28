@@ -48,7 +48,6 @@ export const findLatestContent = async (contentType, count) => {
   return posts ? posts.slice(_count * -1) : [];
 };
 
-
 export const findContent = async (contentType, count) => {
   const _count = count || 4;
   const content = await fetchContent(contentType);

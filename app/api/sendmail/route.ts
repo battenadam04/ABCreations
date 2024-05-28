@@ -2,9 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
 import Mail from 'nodemailer/lib/mailer';
 
-
 export async function POST(req: NextRequest, res: NextResponse) {
-
   const { email, name, lastName, message } = await req.json();
   // https://github.com/nodemailer/nodemailer/blob/master/lib/well-known/services.json
   const transporter = nodemailer.createTransport({
@@ -34,10 +32,9 @@ export async function POST(req: NextRequest, res: NextResponse) {
     });
 
   try {
-
     await sendMailPromise();
-    return NextResponse.json({ message: "Email sent successfully!" }, {status: 200});
+    return NextResponse.json({ message: 'Email sent successfully!' }, { status: 200 });
   } catch (error) {
-    return NextResponse.json({ message: error }, {status: 500});
+    return NextResponse.json({ message: error }, { status: 500 });
   }
-};
+}

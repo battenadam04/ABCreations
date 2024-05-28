@@ -6,6 +6,7 @@ import { twMerge } from 'tailwind-merge';
 import { FormProps } from '../../shared/types';
 import { contactSchema } from '~/shared/formValidation/contact.schema';
 import { yupResolver } from '@hookform/resolvers/yup';
+import { contactFormValues } from '~/shared/interfaces/forms';
 
 const Form = ({
   title,
@@ -18,48 +19,24 @@ const Form = ({
   btnPosition,
   containerClass,
 }: FormProps) => {
-  const [inputValues, setInputValues] = useState([]);
-  const [radioBtnValue, setRadioBtnValue] = useState('');
-  const [textareaValues, setTextareaValues] = useState('');
-  const [checkedState, setCheckedState] = useState<boolean[]>(new Array(checkboxes && checkboxes.length).fill(false));
+    const [submitSuccessful, setSubmitSuccessful] = useState(false);
 
-  // Update the value of the entry fields
-  const changeInputValueHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = event.target;
-
-    setInputValues({
-      ...inputValues,
-      [name]: value,
-    });
-  };
-
-  // Update checked radio buttons
-  const changeRadioBtnsHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setRadioBtnValue(event.target.value);
-  };
-
-  // Update the textarea value
-  const changeTextareaHandler = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
-    setTextareaValues(event.target.value);
-  };
-
-  // Update checkbox radio buttons
-  const changeCheckboxHandler = (index: number) => {
-    setCheckedState((prevValues) => {
-      const newValues = [...(prevValues as boolean[])];
-      newValues.map(() => {
-        newValues[index] = !checkedState[index];
-      });
-      return newValues;
-    });
-  };
-
-
-  const { register, handleSubmit, reset, formState: { errors } } = useForm({
+  const {
+    register,
+    handleSubmit,
+    reset,
+    getValues,
+    formState: { errors },
+  } = useForm<contactFormValues>({
+    defaultValues: {
+      policy: false,
+    },
     resolver: yupResolver(contactSchema),
   });
-
+  const formValues = getValues();
   const onSubmit = (data: any) => {
+    console.log(getValues());
+
     fetch('/api/sendmail', {
       method: 'POST',
       headers: {
@@ -67,6 +44,24 @@ const Form = ({
       },
       body: JSON.stringify(data),
     });
+
+    // check if 'do not save email' checkbox is selected
+    if (!getValues().doNotSaveEmail) {
+      fetch('/api/saveUserDetails', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
+    }
+
+    setSubmitSuccessful(true);
+
+    setInterval(() => {
+      setSubmitSuccessful(false)
+    },5000);
+
     reset();
   };
 
@@ -87,14 +82,16 @@ const Form = ({
                   type={type}
                   id={name}
                   autoComplete={autocomplete}
-                  value={inputValues[index]}
+                  value={formValues[name]}
                   placeholder={placeholder}
                   className="mb-2 w-full rounded-md border border-gray-400 py-2 pl-2 pr-4 shadow-md dark:text-gray-300 sm:mb-0"
-                  {...register(name as any, {
-                    onChange: () => changeInputValueHandler
-                  })}
+                  {...register(name)}
                 />
-                {errors.name &&(<p>{errors.name.message}</p>)}
+                {errors[name]?.message && (
+                  <div className="bg-orange-100 border-l-4 border-orange-500 text-orange-700 p-2" role="alert">
+                    <p className="font-bold">{errors[name]?.message as string}</p>
+                  </div>
+                )}
               </div>
             ))}
         </div>
@@ -109,11 +106,9 @@ const Form = ({
                     id={label}
                     type="radio"
                     value={`value${index}`}
-                    checked={radioBtnValue === `value${index}`}
+                    checked={formValues[radioBtns.name] === `value${index}`}
                     className="cursor-pointer"
-                    {...register(radioBtns.name as any, {
-                      onChange: () => changeRadioBtnsHandler
-                    })}
+                    {...register(radioBtns.name)}
                   />
                   <label htmlFor={label} className="ml-2">
                     {label}
@@ -133,32 +128,37 @@ const Form = ({
               id={textarea.name}
               cols={textarea.cols}
               rows={textarea.rows}
-              value={textareaValues}
+              value={formValues[textarea.name]}
               placeholder={textarea.placeholder}
               className="mb-2 w-full rounded-md border border-gray-400 py-2 pl-2 pr-4 shadow-md dark:text-gray-300 sm:mb-0"
-              {...register(textarea.name as any, {
-                onChange: (e) => changeTextareaHandler(e)
-              })}
+              {...register(textarea.name)}
             />
+            {errors[textarea.name]?.message && (
+              <div className="bg-orange-100 border-l-4 border-orange-500 text-orange-700 p-2" role="alert">
+                <p className="font-bold">{errors[textarea.name]?.message as string}</p>
+              </div>
+            )}
           </div>
         )}
         {/* Checkboxes */}
         {checkboxes && (
           <div className="mx-0 mb-1 sm:mb-4">
-            {checkboxes.map(({ label }, index) => (
-              <div key={`checkbox-${index}`} className="mx-0 my-1 flex items-baseline">
+            {checkboxes.map(({ label, name }, index) => (
+              <div key={`checkbox-${index}`} className="mx-0 my-1 items-baseline">
                 <input
                   id={label}
                   type="checkbox"
-                  checked={checkedState[index]}
                   className="cursor-pointer"
-                  {...register(label as any, {
-                    onChange: () => changeCheckboxHandler(index)
-                  })}
+                  {...register(name)}
                 />
                 <label htmlFor={label} className="ml-2">
                   {label}
                 </label>
+                {name === 'policy' && errors[name]?.message && (
+                  <div className="bg-orange-100 border-l-4 border-orange-500 text-orange-700 p-2" role="alert">
+                    <p className="font-bold">{errors[name]?.message}</p>
+                  </div>
+                )}
               </div>
             ))}
           </div>
@@ -168,8 +168,8 @@ const Form = ({
         <div
           className={`${btnPosition === 'left' ? 'text-left' : btnPosition === 'right' ? 'text-right' : 'text-center'}`}
         >
-          <button type={btn.type || 'button'} className="btn btn-primary sm:mb-0">
-            {btn.title}
+          <button type={btn.type || 'button'} className={`btn ${!submitSuccessful ? 'btn-primary' : 'bg-green-400 text-white-500'} sm:mb-0`}>
+            {!submitSuccessful ? btn.title : 'Message sent!'}
           </button>
         </div>
       )}

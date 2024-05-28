@@ -1,11 +1,4 @@
-import {
-  ContactProps,
-  FeaturesProps,
-  HeroProps,
-  StatsProps,
-  StepsProps,
-  TestimonialsProps,
-} from '~/shared/types';
+import { ContactProps, FeaturesProps, HeroProps, StatsProps, StepsProps, TestimonialsProps } from '~/shared/types';
 import aboutcompanypage from '~/assets/images/aboutcompanypage.png';
 import {
   IconAdjustments,
@@ -96,7 +89,8 @@ export const featuresFourAboutTwo: FeaturesProps = {
   items: [
     {
       title: 'Championing Creativity',
-      description: 'We value innovation and originality, encouraging creative thinking that leads to unique and meaningful product designs.',
+      description:
+        'We value innovation and originality, encouraging creative thinking that leads to unique and meaningful product designs.',
       icon: IconUser,
     },
     {
@@ -107,12 +101,14 @@ export const featuresFourAboutTwo: FeaturesProps = {
     },
     {
       title: 'Prioritizing Our Customers',
-      description: 'We commit to understanding and meeting the needs and expectations of our customers, providing friendly service and exceptional experiences.',
+      description:
+        'We commit to understanding and meeting the needs and expectations of our customers, providing friendly service and exceptional experiences.',
       icon: IconThumbUp,
     },
     {
       title: ' Integrity in Every Action',
-      description: 'We uphold honesty, transparency, and ethics in all our business dealings, building trust with our customers and partners.',
+      description:
+        'We uphold honesty, transparency, and ethics in all our business dealings, building trust with our customers and partners.',
       icon: IconAdjustments,
     },
     {
@@ -123,7 +119,8 @@ export const featuresFourAboutTwo: FeaturesProps = {
     },
     {
       title: ' Embracing Inclusivity',
-      description: 'We believe in fostering an inclusive environment where all ideas are welcomed and everyone feels valued, reflecting this ethos in our diverse product range.',
+      description:
+        'We believe in fostering an inclusive environment where all ideas are welcomed and everyone feels valued, reflecting this ethos in our diverse product range.',
       icon: IconHomeEco,
     },
   ],

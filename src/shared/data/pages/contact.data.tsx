@@ -85,10 +85,12 @@ export const contact2Contact: ContactProps = {
     checkboxes: [
       {
         label: 'Have you read our privacy policy?',
+        name: 'policy',
         value: '',
       },
       {
         label: 'I do not want my email saved for future promotions/ product releases',
+        name: 'doNotSaveEmail',
         value: '',
       },
     ],

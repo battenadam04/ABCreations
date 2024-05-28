@@ -56,7 +56,7 @@ type Input = {
   type: string;
   label?: string;
   value?: string;
-  name?: string;
+  name: string;
   autocomplete?: string;
   placeholder?: string;
 };
@@ -72,6 +72,7 @@ type Textarea = {
 type Checkbox = {
   label: string;
   value: string;
+  name: string;
 };
 
 type Radio = {
@@ -79,7 +80,7 @@ type Radio = {
 };
 
 type RadioBtn = {
-  name: string,
+  name: string;
   label?: string;
   radios: Array<Radio>;
 };
