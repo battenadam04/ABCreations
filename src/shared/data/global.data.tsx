@@ -100,7 +100,7 @@ export const footerData: FooterProps = {
         },
         {
           label: 'goodreads',
-          href: '/',
+          href: 'https://www.goodreads.com/author/show/30080857.Aiden_Blake',
         },
       ],
     },
@@ -129,10 +129,9 @@ export const footerData: FooterProps = {
   ],
   socials: [
     { label: 'Twitter', icon: IconBrandTwitter, href: '#' },
-    { label: 'Instagram', icon: IconBrandInstagram, href: '#' },
+    // { label: 'Instagram', icon: IconBrandInstagram, href: '#' },
     { label: 'Facebook', icon: IconBrandFacebook, href: '#' },
-    { label: 'RSS', icon: IconRss, href: '#' },
-    { label: 'Github', icon: IconBrandGithub, href: 'https://github.com/onwidget/tailnext' },
+    // { label: 'RSS', icon: IconRss, href: '#' },
   ],
   footNote: (
     <div className="mr-4 text-sm dark:text-slate-400">

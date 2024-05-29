@@ -1,6 +1,6 @@
 # Terms and Conditions
 
-_Last updated_: March 14, 2023
+_Last updated_: May 31, 2024
 
 Please read these terms and conditions carefully before using Our Service.
 
@@ -28,7 +28,7 @@ For the purposes of these Terms and Conditions:
 
 - **Third-party Social Media Service** means any services or content (including data, information, products or services) provided by a third-party that may be displayed, included or made available by the Service.
 
-- **Website** refers to TailNext, accessible from [https://tailnext.vercel.app](https://tailnext.vercel.app)
+- **Website** refers to ABCreativeLabs
 
 - **You** means the individual accessing or using the Service, or the company, or other legal entity on behalf of which such individual is accessing or using the Service, as applicable.
 

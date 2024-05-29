@@ -98,6 +98,7 @@ type FormProps = {
   radioBtns?: RadioBtn;
   textarea?: Textarea;
   checkboxes?: Array<Checkbox>;
+  checkboxLink?: Link;
   btn: Button;
   btnPosition?: 'center' | 'right' | 'left';
   containerClass?: string;

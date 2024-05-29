@@ -23,12 +23,12 @@ export const hero2About: HeroProps = {
     'Your premier destination for unique books and custom-designed t-shirts. At ABCreativeLabs, we believe that creativity and expression should be accessible to everyone. Founded by a passionate team of artists and writers, our mission is to bring your interests and stories to life through high-quality products that you can treasure.',
   callToAction: {
     text: 'View Amazon Author Profile',
-    href: 'https://www.linkedin.com/',
+    href: 'https://www.amazon.co.uk/stores/Mr-Aiden-Blake/author/B0CP2VQ4PL',
     targetBlank: true,
   },
   callToAction2: {
     text: 'View Amazon Merch Profile',
-    href: 'https://www.linkedin.com/',
+    href: 'https://www.amazon.co.uk/s?rh=n%3A83450031%2Cp_4%3AABCreativeLabs&ref=bl_sl_s_ap_web_83450031',
     targetBlank: true,
   },
   callToAction3: {
