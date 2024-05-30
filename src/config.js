@@ -5,6 +5,6 @@ module.exports.SITE = {
   basePathname: '/',
   trailingSlash: false,
 
-  title: 'ABCreativeLabs',
+  title: 'ABCreativeLabs | Amazon content | Merch',
   description: 'ABCreativeLabs provides bespoke content in a range of formats, soon to be on a range of platforms. Currently our content is exclusive to Amazon.',
 };

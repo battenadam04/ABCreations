@@ -20,11 +20,11 @@ const Page = async () => {
       <Hero {...heroTshirts} />
       <div className="grid grid-cols-1 gap-6  p-4 md:p-0 lg:grid-cols-2">
 
-        {tshirtsContent.map(({ url, title, image }: { url: string; title: string; image: string }) => (
+        {tshirtsContent.map(({ url, subTitle, title, image }: { url: string; subTitle: string, title: string; image: string }) => (
           <div key={url} className="flex flex-col overflow-hidden rounded-xl border border-gray-200 shadow-lg">
             <Link href={url}>
-              <Image width={650} height={340} alt={title} src={`${image}`} />
-              <h2 className="p-4 font-bold">{title}</h2>
+              <Image width={650} height={340} alt={subTitle} src={`${image}`} />
+              <h2 className="p-4 font-bold text-center">{title}</h2>
             </Link>
           </div>
         ))}
