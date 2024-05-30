@@ -7,7 +7,8 @@ import Image from 'next/image';
 import { booksContent } from '~/content/books/books';
 
 export const metadata: Metadata = {
-  title: 'Books',
+  title: 'Amazon KDP Books',
+  description: 'Amazon KDP books including the popular and upcoming Dads First Steps: The Step-By-Step fathers Guide to Nurturing Bonds, Reducing Stress, and Building Healthier Relationships with their and Hack Your Gut: Simple Secrets to Digestive Harmony: The 10 step Guide to Stress-Free Digestion for Energy, Weight, and Emotional Well-being'
 };
 
 const Page = async () => {

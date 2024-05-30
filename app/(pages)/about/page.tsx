@@ -6,6 +6,7 @@ import { featuresFourAbout, featuresFourAboutTwo, hero2About, statsAbout } from 
 
 export const metadata: Metadata = {
   title: `About us`,
+  description: 'An independant company aimed at creating bespoke content. Currently we create t-shirt designs exclusively on Amazon and Books which come in a range of formats. Our books are currently exclusive to Amazon but we aim to branch out to other platforms in the future.'
 };
 
 const Page = () => {
