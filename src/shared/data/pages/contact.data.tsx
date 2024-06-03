@@ -1,4 +1,4 @@
-import { IconClock, IconMapPin, IconPhoneCall } from '@tabler/icons-react';
+import { IconPhoneCall } from '@tabler/icons-react';
 import { ContactProps } from '~/shared/types';
 import { HeroProps } from '~/shared/types';
 
@@ -30,7 +30,6 @@ export const contact2Contact: ContactProps = {
     {
       title: 'Contact',
       description: ['Mail: aidenblakekdp@outlook.com'],
-      icon: IconPhoneCall,
     },
   ],
   form: {

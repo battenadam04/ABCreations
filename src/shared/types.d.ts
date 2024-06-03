@@ -50,6 +50,7 @@ type LinkOrButton = {
 type Button = {
   title: string;
   type: 'button' | 'submit' | 'reset';
+  className?: string;
 };
 
 type Input = {
@@ -59,6 +60,7 @@ type Input = {
   name: string;
   autocomplete?: string;
   placeholder?: string;
+  className? : string;
 };
 
 type Textarea = {
@@ -92,6 +94,7 @@ type SmallForm = {
 };
 
 type FormProps = {
+  id?: string,
   title?: string;
   description?: string;
   inputs: Array<Input>;
@@ -102,6 +105,8 @@ type FormProps = {
   btn: Button;
   btnPosition?: 'center' | 'right' | 'left';
   containerClass?: string;
+  customSubmission?: (data: any, doNotSaveEmail?: boolean) => void;
+  customValidation?: yup.InferType<typeof schema> | contactFormValues;
 };
 
 type Image = {

@@ -8,7 +8,7 @@ import { tshirtsContent } from '~/content/tshirts/tshirts';
 import InfoAlert from '~/components/widgets/infoAlert';
 
 export const metadata: Metadata = {
-  title: 'Amazon Merch T-shirts',
+  title: 'Merch T-shirts',
   description: 'Amazon Merch T-shirt designs ranging from bespoke graphic designs aimed at Dads, Fathers Pa Pas and Grandads, with more to come.',
 };
 

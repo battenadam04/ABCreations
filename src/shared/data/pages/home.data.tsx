@@ -541,30 +541,20 @@ export const contactHome: ContactProps = {
     },
   ],
   form: {
-    title: 'Ready to Get Started?',
+    id: 'subscribeForm',
     inputs: [
-      {
-        type: 'text',
-        name: 'name',
-        autocomplete: 'off',
-        placeholder: 'Your name',
-      },
       {
         type: 'email',
         name: 'email',
         autocomplete: 'on',
-        placeholder: 'Your email address',
+        placeholder: 'Enter your email',
+        className: 'w-md mb-0',
       },
     ],
-    textarea: {
-      cols: 30,
-      rows: 5,
-      name: 'textarea',
-      placeholder: 'Write your message...',
-    },
     btn: {
-      title: 'Send Message',
+      title: 'Subscribe',
       type: 'submit',
+      className: 'ml-2 mt-0.5 px-3 py-2 text-xs font-medium text-center text-white bg-blue-700 rounded-md hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-400 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800',
     },
   },
 };

@@ -4,11 +4,11 @@ import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { twMerge } from 'tailwind-merge';
 import { FormProps } from '../../shared/types';
-import { contactSchema } from '~/shared/formValidation/contact.schema';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { contactFormValues } from '~/shared/interfaces/forms';
 
 const Form = ({
+  id,
   title,
   description,
   inputs,
@@ -18,6 +18,8 @@ const Form = ({
   btn,
   btnPosition,
   containerClass,
+  customSubmission,
+  customValidation,
 }: FormProps) => {
     const [submitSuccessful, setSubmitSuccessful] = useState(false);
 
@@ -31,60 +33,40 @@ const Form = ({
     defaultValues: {
       policy: false,
     },
-    resolver: yupResolver(contactSchema),
+    ...customValidation && {resolver: yupResolver(customValidation)},
   });
-  const formValues = getValues();
+  
   const onSubmit = (data: any) => {
-    console.log(getValues());
+    
+    customSubmission && customSubmission(data, getValues().doNotSaveEmail);
 
-    fetch('/api/sendmail', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(data),
-    });
-
-    // check if 'do not save email' checkbox is selected
-    if (!getValues().doNotSaveEmail) {
-      fetch('/api/saveUserDetails', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(data),
-      });
-    }
+    reset();
 
     setSubmitSuccessful(true);
-
     setInterval(() => {
       setSubmitSuccessful(false)
     },5000);
-
-    reset();
   };
 
   return (
-    <form id="contactForm" className={twMerge('', containerClass)} onSubmit={handleSubmit(onSubmit)}>
+    <form id={id || "contactForm"} className={twMerge('', containerClass)} onSubmit={handleSubmit(onSubmit)}>
       {title && <h2 className={`${description ? 'mb-2' : 'mb-4'} text-2xl font-bold`}>{title}</h2>}
       {description && <p className="mb-4">{description}</p>}
-      <div className="mb-6">
         {/* Inputs */}
         <div className="mx-0 mb-1 sm:mb-4">
           {inputs &&
-            inputs.map(({ type, label, name, autocomplete, placeholder }, index) => (
+            inputs.map(({ className, type, label, name, autocomplete, placeholder }, index) => {
+              console.log(name, getValues()[name]);
+              return (
               <div key={`item-input-${index}`} className="mx-0 mb-1 sm:mb-4">
                 <label htmlFor={name} className="pb-1 text-xs uppercase tracking-wider">
                   {label}
                 </label>
                 <input
                   type={type}
-                  id={name}
                   autoComplete={autocomplete}
-                  value={formValues[name]}
                   placeholder={placeholder}
-                  className="mb-2 w-full rounded-md border border-gray-400 py-2 pl-2 pr-4 shadow-md dark:text-gray-300 sm:mb-0"
+                  className={`${className  || 'mb-2' }  w-full rounded-md border border-gray-400 py-2 pl-2 pr-4 shadow-md dark:text-gray-300 sm:mb-0`}
                   {...register(name)}
                 />
                 {errors[name]?.message && (
@@ -93,7 +75,7 @@ const Form = ({
                   </div>
                 )}
               </div>
-            ))}
+            )})}
         </div>
         {/* Radio buttons */}
         {radioBtns && (
@@ -105,8 +87,7 @@ const Form = ({
                   <input
                     id={label}
                     type="radio"
-                    value={`value${index}`}
-                    checked={formValues[radioBtns.name] === `value${index}`}
+                    checked={getValues()[radioBtns.name] === `value${index}`}
                     className="cursor-pointer"
                     {...register(radioBtns.name)}
                   />
@@ -128,7 +109,6 @@ const Form = ({
               id={textarea.name}
               cols={textarea.cols}
               rows={textarea.rows}
-              value={formValues[textarea.name]}
               placeholder={textarea.placeholder}
               className="mb-2 w-full rounded-md border border-gray-400 py-2 pl-2 pr-4 shadow-md dark:text-gray-300 sm:mb-0"
               {...register(textarea.name)}
@@ -163,12 +143,11 @@ const Form = ({
             ))}
           </div>
         )}
-      </div>
       {btn && (
         <div
           className={`${btnPosition === 'left' ? 'text-left' : btnPosition === 'right' ? 'text-right' : 'text-center'}`}
         >
-          <button type={btn.type || 'button'} className={`btn ${!submitSuccessful ? 'btn-primary' : 'bg-green-400 text-white-500'} sm:mb-0`}>
+          <button type={btn.type || 'button'} className={ twMerge(btn.className, `btn ${!submitSuccessful ? 'btn-primary' : 'bg-green-400 text-white-500'} sm:mb-0`)}>
             {!submitSuccessful ? btn.title : 'Message sent!'}
           </button>
         </div>

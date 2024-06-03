@@ -10,6 +10,7 @@ import Header from '~/components/widgets/Header';
 import { Inter as CustomFont } from 'next/font/google';
 import '~/assets/styles/base.css';
 import Footer from '~/components/widgets/Footer';
+import Announcement from '~/components/widgets/Announcement';
 
 const customFont = CustomFont({ subsets: ['latin'], variable: '--font-custom' });
 
@@ -35,7 +36,7 @@ export default function RootLayout({ children }: LayoutProps) {
       <body className="tracking-tight antialiased text-gray-900 dark:text-slate-300">
 
         <Providers>
-          {/* <Announcement /> */}
+          <Announcement />
           <Header />
           <main>{children}</main>
           <Analytics />
