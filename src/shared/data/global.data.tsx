@@ -17,6 +17,7 @@ export const announcementData: AnnouncementProps = {
   },
   callToAction2: {
     text: 'Subscribe now:',
+    href: 'https://www.amazon.com/Hack-Your-Gut-Stress-Free-Well-being-ebook/dp/B0CWF6DGJF/ref=sr_1_1?crid=2KUTQLYL9WP5S&dib=eyJ2IjoiMSJ9.SBJBxoEDqD7fDrCl5UJuLKnqyLacFOScMj01By3MeJEraUvWPkOOX_6hNnglsZ5L7E8WFEZMwdSO8ucfN3-F8fU36wvqsbo6-mC7zNTDWRfWDPFfAupR9K4r9T8OhrtHFdwa3h5RvyKQkG_AgD6mM7f_QoDDRYCagjJ9_8P4YzuCzSclQT8eCuO1GY4J3mfC-I47NQFzWmAuxwVx707SC8mcI7ET4Jka3NTLP8u3T0I.LGy3XrULQZDux3mR7epIbK8ILyMPukk1CFKk9S2rV4E&dib_tag=se&keywords=hack+your+gut&qid=1717146294&sprefix=hack+your+gu%2Caps%2C80&sr=8-1',
   },
 };
 
