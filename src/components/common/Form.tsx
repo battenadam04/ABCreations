@@ -55,9 +55,7 @@ const Form = ({
         {/* Inputs */}
         <div className="mx-0 mb-1 sm:mb-4">
           {inputs &&
-            inputs.map(({ className, type, label, name, autocomplete, placeholder }, index) => {
-              console.log(name, getValues()[name]);
-              return (
+            inputs.map(({ className, type, label, name, autocomplete, placeholder }, index) =>(
               <div key={`item-input-${index}`} className="mx-0 mb-1 sm:mb-4">
                 <label htmlFor={name} className="pb-1 text-xs uppercase tracking-wider">
                   {label}
@@ -75,7 +73,7 @@ const Form = ({
                   </div>
                 )}
               </div>
-            )})}
+            ))}
         </div>
         {/* Radio buttons */}
         {radioBtns && (

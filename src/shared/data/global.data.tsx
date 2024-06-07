@@ -66,7 +66,7 @@ export const headerData: HeaderProps = {
 
 // Footer data
 export const footerData: FooterProps = {
-  title: 'AB Creation Labs',
+  title: 'AB Creation Labs Ltd',
   links: [
     {
       label: 'Terms & Conditions',
