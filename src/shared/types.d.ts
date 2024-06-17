@@ -107,6 +107,7 @@ type FormProps = {
   containerClass?: string;
   customSubmission?: (data: any, doNotSaveEmail?: boolean) => void;
   customValidation?: yup.InferType<typeof schema> | contactFormValues;
+  customErrorStyling?: string;
 };
 
 type Image = {

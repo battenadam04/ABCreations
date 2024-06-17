@@ -20,6 +20,7 @@ const Form = ({
   containerClass,
   customSubmission,
   customValidation,
+  customErrorStyling,
 }: FormProps) => {
     const [submitSuccessful, setSubmitSuccessful] = useState(false);
 
@@ -64,11 +65,11 @@ const Form = ({
                   type={type}
                   autoComplete={autocomplete}
                   placeholder={placeholder}
-                  className={`${className  || 'mb-2' }  w-full rounded-md border border-gray-400 py-2 pl-2 pr-4 shadow-md dark:text-gray-300 sm:mb-0`}
+                  className={`${className  || 'mb-2' } w-full rounded-md border border-gray-400 py-2 pl-2 pr-4 shadow-md dark:text-gray-300 sm:mb-0`}
                   {...register(name)}
                 />
                 {errors[name]?.message && (
-                  <div className="bg-orange-100 border-l-4 border-orange-500 text-orange-700 p-2" role="alert">
+                  <div className={`${customErrorStyling} z-50 bg-orange-100 border-l-4 border-orange-500 text-orange-700 p-2`} role="alert">
                     <p className="font-bold">{errors[name]?.message as string}</p>
                   </div>
                 )}
@@ -146,7 +147,7 @@ const Form = ({
           className={`${btnPosition === 'left' ? 'text-left' : btnPosition === 'right' ? 'text-right' : 'text-center'}`}
         >
           <button type={btn.type || 'button'} className={ twMerge(btn.className, `btn ${!submitSuccessful ? 'btn-primary' : 'bg-green-400 text-white-500'} sm:mb-0`)}>
-            {!submitSuccessful ? btn.title : 'Message sent!'}
+            {!submitSuccessful ? btn.title : 'SUCCESS'}
           </button>
         </div>
       )}
