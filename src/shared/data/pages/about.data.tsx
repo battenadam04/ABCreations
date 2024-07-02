@@ -1,17 +1,10 @@
-import { ContactProps, FeaturesProps, HeroProps, StatsProps, StepsProps, TestimonialsProps } from '~/shared/types';
+import { FeaturesProps, HeroProps, StatsProps } from '~/shared/types';
 import aboutcompanypage from '~/assets/images/aboutcompanypage.png';
 import {
   IconAdjustments,
-  IconAward,
   IconBulb,
   IconHeartHandshake,
   IconHomeEco,
-  IconNumber1,
-  IconNumber2,
-  IconNumber3,
-  IconNumber4,
-  IconNumber5,
-  IconPhoneCall,
   IconThumbUp,
   IconUser,
 } from '@tabler/icons-react';

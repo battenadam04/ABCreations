@@ -1,6 +1,5 @@
 module.exports.SITE = {
   name: 'ABCreativeLabs',
-
   origin: '',
   basePathname: '/',
   trailingSlash: false,

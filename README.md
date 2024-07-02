@@ -6,4 +6,4 @@
 
 - ✅ display KDP Author content.
 - ✅ display Amazon Merch.
-- ✅ Blog for related topics to Amazon content
+- ✅ Blog for related topics to Amazon content, forex trading and fitness

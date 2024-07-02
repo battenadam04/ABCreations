@@ -2,20 +2,21 @@ import fs from 'fs';
 import matter from 'gray-matter';
 import { join } from 'path';
 
-export const findContentBySlug = async (contentType, slug) => {
+export const findContentBySlug = async (contentType, slug = 'forex-beginners') => {
   if (!slug) return null;
 
   try {
     const readFile = fs.readFileSync(join('src/content/' + contentType, `${slug}.md`), 'utf-8');
     const { data: frontmatter, content } = matter(readFile);
+
     return {
       slug,
       ...frontmatter,
       content,
     };
-  } catch (e) {}
-
-  return null;
+  } catch (e) {
+    return null;
+  }
 };
 
 const load = (contentType) => {
