@@ -19,8 +19,6 @@ Forex, short for foreign exchange, is the process of changing one currency into 
 
 ## Key Participants in the Forex Market
 
-![Key Participants](https://example.com/path-to-participants-image.jpg)
-
 The forex market is comprised of a diverse group of participants, including:
 
 ### Central Banks
@@ -40,7 +38,7 @@ These entities trade forex as part of their investment strategies to diversify p
 
 ## Why Trade Forex?
 
-![Why Trade Forex](https://example.com/path-to-why-trade-forex-image.jpg)
+![Why Trade Forex](https://images.unsplash.com/photo-1535320903710-d993d3d77d29?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)
 
 ### High Liquidity
 The forex market is highly liquid, meaning you can buy and sell currency pairs with ease. High liquidity ensures that transactions are executed quickly and at stable prices. This liquidity is driven by the large volume of trading activities across the globe.
@@ -54,7 +52,7 @@ Forex brokers offer significant leverage, allowing traders to control large posi
 ## Key Concepts in Forex Trading
 
 
-![Key Concepts in Forex Trading](https://www.vecteezy.com/vector-art/662386-exchanging-currency-icons.png)
+![Key Concepts in Forex Trading](https://images.unsplash.com/photo-1651341050677-24dba59ce0fd?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)
 
 ### Currency Pairs
 
@@ -74,7 +72,7 @@ Forex is traded in lots. A standard lot is 100,000 units of the base currency, a
 
 ## Steps to Start Trading Forex
 
-![Steps to Start Trading Forex](https://example.com/path-to-choose-broker-image.jpg)
+![Steps to Start Trading Forex](https://images.unsplash.com/photo-1542234968-96e28019f847?q=80&w=3429&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)
 
 ### Step 1: Choose a Reliable Broker
 
@@ -98,7 +96,7 @@ Begin by trading small positions and gradually increase your exposure as you gai
 
 ## Tips for Successful Forex Trading
 
-![Tips](https://example.com/path-to-tips-image.jpg)
+![Tips](https://images.unsplash.com/photo-1622186477895-f2af6a0f5a97?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)
 
 - **Educate Yourself**: Continuously learn about forex trading strategies, technical analysis, and market trends. Knowledge is power in forex trading, and staying informed helps you make better trading decisions.
 - **Stay Updated**: Follow financial news and economic indicators that can impact currency movements. Economic events, such as interest rate decisions and geopolitical developments, can cause significant market fluctuations.

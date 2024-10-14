@@ -25,7 +25,7 @@ export default async function Home({}) {
         {posts.map(({ slug, title, image }: { slug: string, title: string, image: string }) =>(
           <div key={slug} className="flex flex-col overflow-hidden rounded-xl border border-gray-200 shadow-lg">
             <Link href={`/${slug}`}>
-              <Image width={650} height={340} alt={title} src={`${blogContent.images.find((content) => content.value === image)?.image.src}`} />
+              <Image width={650} className="h-60" height={340} alt={title} src={`${blogContent.images.find((content) => content.value === image)?.image.src}`} />
               <h2 className="p-4 font-bold">{title}</h2>
             </Link>
           </div>
