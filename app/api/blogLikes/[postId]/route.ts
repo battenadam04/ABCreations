@@ -5,9 +5,9 @@ export async function GET(request: NextRequest, { params }: { params: { postId: 
   const { postId } = params;
 
   try {
-
+    const cleanedPostId = postId.trim().toLowerCase();
     // Use parameterized query to prevent SQL injection
-    const result = await sql`SELECT total_likes FROM blogs WHERE blog_title = ${postId}`;
+    const result = await sql`SELECT total_likes FROM blogs WHERE LOWER(blog_title) = ${cleanedPostId}`;
 
     // Check if any row was found
     if (result.rowCount === 0) {
