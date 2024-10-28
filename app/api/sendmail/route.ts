@@ -27,7 +27,7 @@ export async function POST(req: NextRequest) {
     if (response.ok) {
       return NextResponse.json({ message: 'Email sent successfully!' }, { status: 200 });
     } else {
-      const error: any = await response.json();
+      const error: any = await response.text();
       return NextResponse.json({ message: error.message || 'Failed to send email' }, { status: 500 });
     }
   } catch (error: any) {
