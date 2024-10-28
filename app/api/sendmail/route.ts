@@ -15,18 +15,18 @@ export async function POST(req: NextRequest) {
     },
   };
 
-    const response = await fetch('https://api.emailjs.com/api/v1.0/email/send', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(emailData),
-    });
+  const response = await fetch('https://api.emailjs.com/api/v1.0/email/send', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(emailData),
+  });
 
-    if (response.ok) {
-      return NextResponse.json({ message: 'Email sent successfully!' }, { status: 200 });
-    } else {
-      const error: any = await response.text();
-      return NextResponse.json({ message: error || 'Failed to send email' }, { status: 500 });
-    }
+  if (response.ok) {
+    return NextResponse.json({ message: 'Email sent successfully!' }, { status: 200 });
+  } else {
+    const error: any = await response.text();
+    return NextResponse.json({ message: error || 'Failed to send email' }, { status: 500 });
+  }
 }

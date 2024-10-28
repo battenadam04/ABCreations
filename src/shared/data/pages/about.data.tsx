@@ -1,13 +1,6 @@
 import { FeaturesProps, HeroProps, StatsProps } from '~/shared/types';
 import aboutcompanypage from '~/assets/images/aboutcompanypage.png';
-import {
-  IconAdjustments,
-  IconBulb,
-  IconHeartHandshake,
-  IconHomeEco,
-  IconThumbUp,
-  IconUser,
-} from '@tabler/icons-react';
+import { IconAdjustments, IconBulb, IconHeartHandshake, IconHomeEco, IconThumbUp, IconUser } from '@tabler/icons-react';
 
 // Hero2 data on About page *******************
 export const hero2About: HeroProps = {

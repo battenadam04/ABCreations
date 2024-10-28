@@ -1,8 +1,7 @@
-import { sql } from "@vercel/postgres";
-import { NextRequest, NextResponse } from "next/server";
+import { sql } from '@vercel/postgres';
+import { NextRequest, NextResponse } from 'next/server';
 
-
-export async function GET(request: NextRequest,   { params }: { params: Promise<{ postId: string }> }) {
+export async function GET(request: NextRequest, { params }: { params: Promise<{ postId: string }> }) {
   const postId = (await params).postId;
 
   try {
@@ -18,7 +17,6 @@ export async function GET(request: NextRequest,   { params }: { params: Promise<
     // Extract total_likes from the result and return it
     const totalLikes = result.rows[0].total_likes;
     return NextResponse.json({ totalLikes }, { status: 200 });
-
   } catch (error) {
     console.error('Error executing query:', error);
     return NextResponse.json({ message: 'Internal Server Error' }, { status: 500 });
