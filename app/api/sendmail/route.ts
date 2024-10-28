@@ -15,7 +15,6 @@ export async function POST(req: NextRequest) {
     },
   };
 
-  try {
     const response = await fetch('https://api.emailjs.com/api/v1.0/email/send', {
       method: 'POST',
       headers: {
@@ -28,9 +27,6 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ message: 'Email sent successfully!' }, { status: 200 });
     } else {
       const error: any = await response.text();
-      return NextResponse.json({ message: error.message || 'Failed to send email' }, { status: 500 });
+      return NextResponse.json({ message: error || 'Failed to send email' }, { status: 500 });
     }
-  } catch (error: any) {
-    return NextResponse.json({ message: 'Failed to send email.', error: error.message }, { status: 500 });
-  }
 }
