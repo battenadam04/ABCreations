@@ -12,7 +12,7 @@ export const dynamicParams = false;
 const getFormattedDate = (date) => date;
 
 export async function generateMetadata({ params }) {
-  const post = await findContentBySlug(contentDir.BLOG_DIR, params.slug);
+  const post = await findContentBySlug(contentDir.BLOG_DIR, await params.slug);
 
   if (!post) {
     return notFound();

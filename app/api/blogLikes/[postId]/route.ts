@@ -1,8 +1,9 @@
 import { sql } from "@vercel/postgres";
 import { NextRequest, NextResponse } from "next/server";
 
-export async function GET(request: NextRequest, { params }: { params: { postId: string } }) {
-  const { postId } = params;
+
+export async function GET(request: NextRequest,   { params }: { params: Promise<{ postId: string }> }) {
+  const postId = (await params).postId;
 
   try {
     const cleanedPostId = postId.trim().toLowerCase();
