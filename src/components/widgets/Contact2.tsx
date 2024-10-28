@@ -9,8 +9,8 @@ import { contactSchema } from '~/shared/formValidation/contact.schema';
 
 const Contact2 = ({ header, form, id, hasBackground = false }: ContactProps) => {
 
-  const onSubmit = (data: any, doNotSaveEmail: boolean | undefined) => {
-    fetch('/api/sendmail', {
+  const onSubmit = async (data: any, doNotSaveEmail: boolean | undefined) => {
+    await fetch('/api/sendmail', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -20,7 +20,7 @@ const Contact2 = ({ header, form, id, hasBackground = false }: ContactProps) => 
 
     // check if 'do not save email' checkbox is selected
     if (!doNotSaveEmail) {
-      fetch('/api/saveUserDetails', {
+      await fetch('/api/saveUserDetails', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

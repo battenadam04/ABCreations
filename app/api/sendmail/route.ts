@@ -1,40 +1,36 @@
 import { NextRequest, NextResponse } from 'next/server';
-import nodemailer from 'nodemailer';
-import Mail from 'nodemailer/lib/mailer';
+import fetch from 'node-fetch';
 
-export async function POST(req: NextRequest, res: NextResponse) {
+export async function POST(req: NextRequest) {
   const { email, name, lastName, message } = await req.json();
-  // https://github.com/nodemailer/nodemailer/blob/master/lib/well-known/services.json
-  const transporter = nodemailer.createTransport({
-    service: 'Hotmail', // Use your preferred service
-    auth: {
-      user: process.env.EMAIL_USERNAME,
-      pass: process.env.EMAIL_PASSWORD,
+
+  const emailData = {
+    service_id: process.env.EMAILJS_SERVICE_ID,
+    template_id: process.env.EMAILJS_TEMPLATE_ID,
+    user_id: process.env.EMAILJS_USER_ID, // EmailJS Public Key
+    template_params: {
+      user_email: email,
+      from_name: `${name} ${lastName}`,
+      message: message,
     },
-  });
-  const mailOptions: Mail.Options = {
-    from: process.env.EMAIL_USERNAME,
-    to: process.env.EMAIL_USERNAME,
-    replyTo: email,
-    subject: `ABCreativeLabs message from ${name + ' ' + lastName} (${email})`,
-    text: message,
   };
 
-  const sendMailPromise = async () =>
-    await new Promise<string>((resolve, reject) => {
-      transporter.sendMail(mailOptions, function (err) {
-        if (!err) {
-          resolve('Email sent');
-        } else {
-          reject(err.message);
-        }
-      });
+  try {
+    const response = await fetch('https://api.emailjs.com/api/v1.0/email/send', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(emailData),
     });
 
-  try {
-    await sendMailPromise();
-    return NextResponse.json({ message: 'Email sent successfully!' }, { status: 200 });
-  } catch (error) {
-    return NextResponse.json({ message: error }, { status: 500 });
+    if (response.ok) {
+      return NextResponse.json({ message: 'Email sent successfully!' }, { status: 200 });
+    } else {
+      const error: any = await response.json();
+      return NextResponse.json({ message: error.message || 'Failed to send email' }, { status: 500 });
+    }
+  } catch (error: any) {
+    return NextResponse.json({ message: 'Failed to send email.', error: error.message }, { status: 500 });
   }
 }
