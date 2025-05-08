@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
 
-import { Analytics } from "@vercel/analytics/react";
+import { Analytics } from '@vercel/analytics/react';
 
 import { SITE } from '~/config.js';
 
@@ -34,7 +34,6 @@ export default function RootLayout({ children }: LayoutProps) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </head>
       <body className="tracking-tight antialiased text-gray-900 dark:text-slate-300">
-
         <Providers>
           {/** hide until handle data collection costs with gov */}
           {/* <Announcement /> */}

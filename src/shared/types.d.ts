@@ -60,7 +60,7 @@ type Input = {
   name: string;
   autocomplete?: string;
   placeholder?: string;
-  className? : string;
+  className?: string;
 };
 
 type Textarea = {
@@ -94,7 +94,7 @@ type SmallForm = {
 };
 
 type FormProps = {
-  id?: string,
+  id?: string;
   title?: string;
   description?: string;
   inputs: Array<Input>;

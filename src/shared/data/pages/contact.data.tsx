@@ -94,11 +94,10 @@ export const contact2Contact: ContactProps = {
       //   value: '',
       // },
     ],
-    checkboxLink:
-      {
-        label: 'Privacy Policy',
-        href: '/privacy',
-      },
+    checkboxLink: {
+      label: 'Privacy Policy',
+      href: '/privacy',
+    },
     btn: {
       title: 'Send Message',
       type: 'submit',

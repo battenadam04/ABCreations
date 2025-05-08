@@ -233,7 +233,7 @@ export const testimonialsHome: TestimonialsProps = {
       platform: 'Amazon',
       testimonial: `I have learned a lot over the course of the last 2 months about the health of my gut or the gut in general. We must pay attention. This book only confirms all I 've learned and then some. I love how it's all broken down and explained how it all works. I am thrilled I found this book and keep it close to remind myself and what to do and what not to do. It's a must read. Read it! It might save your life.`,
       image: {
-        src: 'https://images.unsplash.com/photo-1659057106920-da022cfbc0cd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1180&q=80',
+        src: 'https://images.unsplash.com/photo-1546753051-f9cbab09c91b?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
         alt: 'Andreas Baku',
       },
       href: '/',
@@ -243,7 +243,7 @@ export const testimonialsHome: TestimonialsProps = {
       platform: 'goodreads',
       testimonial: `Dad's First Steps by Aiden Blake is nothing short of a beacon of light for new fathers embarking on the exhilarating journey of parenthood. This invaluable guide offers a comprehensive roadmap, brimming with practical advice, heartfelt anecdotes, and profound insights, to help fathers nurture strong bonds, reduce stress, and cultivate healthier relationships with their children.`,
       image: {
-        src: 'https://images.unsplash.com/photo-1572417884940-c24659be6068?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1180&q=80',
+        src: 'https://images.unsplash.com/photo-1702129751366-d60f2d10c2ea?q=80&w=3474&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
         alt: 'Leroy Malloy',
       },
       href: 'https://www.goodreads.com/review/show/6293652160',
@@ -554,7 +554,8 @@ export const contactHome: ContactProps = {
     btn: {
       title: 'Subscribe',
       type: 'submit',
-      className: 'ml-2 mt-0.5 px-3 py-2 text-xs font-medium text-center text-white bg-blue-700 rounded-md hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-400 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800',
+      className:
+        'ml-2 mt-0.5 px-3 py-2 text-xs font-medium text-center text-white bg-blue-700 rounded-md hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-400 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800',
     },
   },
 };
