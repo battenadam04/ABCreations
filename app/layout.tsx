@@ -36,7 +36,8 @@ export default function RootLayout({ children }: LayoutProps) {
       <body className="tracking-tight antialiased text-gray-900 dark:text-slate-300">
 
         <Providers>
-          <Announcement />
+          {/** hide until handle data collection costs with gov */}
+          {/* <Announcement /> */}
           <Header />
           <main>{children}</main>
           <Analytics />

@@ -87,11 +87,12 @@ export const contact2Contact: ContactProps = {
         name: 'policy',
         value: '',
       },
-      {
-        label: 'I do not want my email saved for future promotions/ product releases',
-        name: 'doNotSaveEmail',
-        value: '',
-      },
+      // pause for now due to gov charges for data collection
+      // {
+      //   label: 'I do not want my email saved for future promotions/ product releases',
+      //   name: 'doNotSaveEmail',
+      //   value: '',
+      // },
     ],
     checkboxLink:
       {
