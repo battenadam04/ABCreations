@@ -160,7 +160,7 @@ const Form = ({
                 type={btn.type || 'button'}
                 className={twMerge(
                   btn.className,
-                  `btn ${!submitSuccessful ? 'btn-primary' : 'bg-green-400 text-white-500'} sm:mb-0`,
+                  `btn ${!submitSuccessful ? 'btn-primary' : 'bg-green-400 text-white-500'} sm:mb-0 float-right`,
                 )}
               >
                 {!submitSuccessful ? btn.title : submitText}

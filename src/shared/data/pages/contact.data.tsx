@@ -18,7 +18,7 @@ export const contact2Contact: ContactProps = {
   id: 'contactTwo-on-contact',
   hasBackground: true,
   header: {
-    title: 'Contact us',
+    //title: 'Contact us',
     subtitle: (
       <>
         Please take a moment to fill out this form.{' '}
