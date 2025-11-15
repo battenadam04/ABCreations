@@ -1,4 +1,5 @@
-import { sql } from '@vercel/postgres';
+// import { sql } from '@vercel/postgres';
+import { neon } from '@neondatabase/serverless';
 import { NextRequest, NextResponse } from 'next/server';
 
 export async function GET(request: NextRequest, { params }: { params: Promise<{ postId: string }> }) {
@@ -6,16 +7,19 @@ export async function GET(request: NextRequest, { params }: { params: Promise<{ 
     const postId = (await params).postId;
     const cleanedPostId = postId.trim().toLowerCase();
 
-    // Correcting the SQL syntax for Postgres
-    const { rows: comments } = await sql`
-        SELECT * FROM comments
-        WHERE LOWER(blog_title)=${cleanedPostId};
-      `;
+    const sql = neon(`${process.env.DATABASE_URL}`);
 
-    if (!comments || comments.length === 0) {
-      return NextResponse.json({ message: 'No comments found', comments: [] }, { status: 200 });
+    // Correcting the SQL syntax for Postgres
+    const result = await sql.query('SELECT * FROM comments WHERE blog_title=$1', [cleanedPostId]);
+
+    if (!result || result.length === 0) {
+      return NextResponse.json({ message: 'No comments found', result: [] }, { status: 200 });
     }
-    return NextResponse.json({ message: 'Comments successfully retrieved', comments }, { status: 200 });
+
+    /** Sanitise and remove all spam */
+
+
+    return NextResponse.json({ message: 'Comments successfully retrieved', result }, { status: 200 });
   } catch (error: any) {
     console.error('Error retrieving comments:', error);
     return NextResponse.json({ message: error.message || 'An error occurred' }, { status: 500 });

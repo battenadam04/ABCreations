@@ -1,16 +1,17 @@
-import { sql } from '@vercel/postgres';
+import { neon } from '@neondatabase/serverless';
 import { NextRequest, NextResponse } from 'next/server';
 
 export async function POST(req: NextRequest) {
   try {
-    const { totalLikes, postId } = await req.json();
+    const { totalLikes, totalDislikes, postId } = await req.json();
 
+    const sql = neon(`${process.env.DATABASE_URL}`);
     // Correcting the SQL syntax for Postgres
     await sql`
         INSERT INTO blogs (blog_Title, total_likes) 
         VALUES (${postId}, ${totalLikes})
         ON CONFLICT (blog_Title) 
-        DO UPDATE SET total_likes = ${totalLikes};
+        DO UPDATE SET total_likes = ${totalLikes}, total_dislikes = ${totalDislikes};
       `;
 
     return NextResponse.json({ message: 'Blog like successfully saved', totalLikes }, { status: 200 });

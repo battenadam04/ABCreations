@@ -18,7 +18,7 @@ const Testimonials = ({
     <div className="flex items-stretch justify-center">
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
         {testimonials.map(({ name, platform, testimonial, image, href }, index) => (
-          <>
+          <div key={index}>
             {testimonial && (
               <div
                 key={`item-testimonial-${index}`}
@@ -65,7 +65,7 @@ const Testimonials = ({
                 )}
               </div>
             )}
-          </>
+          </div>
         ))}
       </div>
     </div>

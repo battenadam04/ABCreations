@@ -30,7 +30,7 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     "app/(blogs)/blog/page.tsx",
-    "app/(blogs)/[slug]/page.jsx",
+    "app/(blogs)/[slug]/page.tsx",
     "src/shared/data/pages/api/sendMail.js",
   ],
   "exclude": ["node_modules"],

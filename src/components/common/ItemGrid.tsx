@@ -32,7 +32,7 @@ const ItemGrid = ({
             containerClass,
           )}
         >
-          {items.map(({ title, description, icon: Icon, callToAction }, index) => (
+          {items.map(({ title, description, icon: Icon, callToAction, timestamp }, index) => (
             <div key={id ? `item-${id}-${index}` : `item-grid-${index}`}>
               <div className={(twMerge('flex flex-row max-w-md'), panelClass)}>
                 <div className="flex justify-center">
@@ -43,7 +43,11 @@ const ItemGrid = ({
                   ) : null}
                 </div>
                 <div className="mt-0.5">
-                  {title && <h3 className={twMerge('text-xl font-bold', titleClass)}>{title}</h3>}
+                  {title && (
+                    <h3 className={twMerge('text-xl font-bold', titleClass)}>
+                      {title} {timestamp && <span className="text-sky-300">{timestamp}</span>}
+                    </h3>
+                  )}
                   {description && (
                     <p
                       className={twMerge(`text-gray-600 dark:text-slate-400 ${title ? 'mt-3' : ''}`, descriptionClass)}

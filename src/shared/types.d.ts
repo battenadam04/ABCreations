@@ -123,6 +123,7 @@ type Item = {
   form?: SmallForm;
   icon?: Icon;
   callToAction?: CallToActionType;
+  timestamp?: string;
 };
 
 type ItemGrid = {

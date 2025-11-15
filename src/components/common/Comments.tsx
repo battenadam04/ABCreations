@@ -2,6 +2,10 @@
 
 import { useState, useEffect } from 'react';
 import useSWR from 'swr';
+import Features4 from '../widgets/Features4';
+import { IconUser } from '@tabler/icons-react';
+import { format } from 'date-fns';
+import Spinner from '../widgets/spinner';
 
 const fetcher = (url: string) =>
   fetch(url, {
@@ -14,29 +18,28 @@ const fetcher = (url: string) =>
 const Comments = ({ postId }: { [key: string]: string }) => {
   const [comments, setComments] = useState<string[]>([]);
 
-  const { data, error } = useSWR(`/api/comments/${postId}`, fetcher);
+  const { data, error, isLoading } = useSWR(`/api/comments/${postId}`, fetcher);
 
   useEffect(() => {
     if (data && !error) {
-      console.log('all comments', data);
-      setComments(data.comments);
-    } else if (error) {
-      console.error('Failed to fetch  comments:', error);
+      setComments(data.result);
     }
   }, [data, error]);
 
-  return (
-    <div className="">
-      {comments.map((comment: any) => {
-        return (
-          <div key={comment.id}>
-            <p>{comment.username}</p>
-            <p>{comment.comment}</p>
-          </div>
-        );
-      })}
-    </div>
-  );
+  const formattedComments = comments.map((comment: any) => {
+    const formattedDate = format(comment.timestamp, 'dd-MM-yyyy HH:mm');
+    return {
+      title: comment.username,
+      description: comment.comment,
+      timestamp: formattedDate,
+      icon: IconUser,
+    };
+  });
+
+  if (isLoading) return <Spinner />;
+  if (error) return <div>Error loading comments</div>;
+
+  return <Features4 columns={1} items={formattedComments} header={{title:"Comments"}} />;
 };
 
 export default Comments;

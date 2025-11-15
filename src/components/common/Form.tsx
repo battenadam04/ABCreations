@@ -62,7 +62,7 @@ const Form = ({
       {isLoading ? (
         <Spinner />
       ) : (
-        <form id={id || 'contactForm'} className={twMerge('', containerClass)} onSubmit={handleSubmit(onSubmit)}>
+        <form id={id || 'contactForm'} className={twMerge('mb-50', containerClass)} onSubmit={handleSubmit(onSubmit)}>
           {title && <h2 className={`${description ? 'mb-2' : 'mb-4'} text-2xl font-bold`}>{title}</h2>}
           {description && <p className="mb-4">{description}</p>}
           {/* Inputs */}
@@ -160,7 +160,7 @@ const Form = ({
                 type={btn.type || 'button'}
                 className={twMerge(
                   btn.className,
-                  `btn ${!submitSuccessful ? 'btn-primary' : 'bg-green-400 text-white-500'} sm:mb-0 float-right`,
+                  `btn ${!submitSuccessful ? 'btn-primary' : 'bg-green-400 text-white-500'} sm:mb-20 float-right`,
                 )}
               >
                 {!submitSuccessful ? btn.title : submitText}

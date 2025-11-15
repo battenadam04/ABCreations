@@ -4,17 +4,25 @@ import { notFound } from 'next/navigation';
 import AddComment from '~/components/common/AddComment';
 import Comments from '~/components/common/Comments';
 import LikeButton from '~/components/common/likeButton';
-import { blogContent, commentsData } from '~/shared/data/pages/blogs.data';
+import { blogContent } from '~/shared/data/pages/blogs.data';
 import { contentDir } from '~/utils/constants';
 
 import { findContentBySlug, findLatestContent } from '~/utils/content';
 
 export const dynamicParams = false;
 
-const getFormattedDate = (date) => date;
+const getFormattedDate = (date: any) => date;
 
-export async function generateMetadata({ params }) {
-  const post = await findContentBySlug(contentDir.BLOG_DIR, await params.slug);
+const fetcher = (url: string) =>
+  fetch(url, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  }).then((res) => res.json());
+
+export async function generateMetadata({ params }: any) {
+  const post: any = await findContentBySlug(contentDir.BLOG_DIR, await params.slug);
 
   if (!post) {
     return notFound();
@@ -23,11 +31,11 @@ export async function generateMetadata({ params }) {
 }
 
 export async function generateStaticParams() {
-  return (await findLatestContent(contentDir.BLOG_DIR)).map(({ slug }) => ({ slug }));
+  return (await findLatestContent(contentDir.BLOG_DIR)).map(({ slug }: any) => ({ slug }));
 }
 
-export default async function Page({ params }) {
-  const post = await findContentBySlug(contentDir.BLOG_DIR, params.slug);
+export default async function Page({ params }: any) {
+  const post: any = await findContentBySlug(contentDir.BLOG_DIR, params.slug);
 
   if (!post) {
     return notFound();
@@ -46,7 +54,7 @@ export default async function Page({ params }) {
           </h1>
           {post.image ? (
             <Image
-              src={blogContent.images.find((content) => content.value === post.image)?.image.src}
+              src={blogContent.images.find((content) => content.value === post.image)?.image.src || ''}
               className="mx-auto mt-4 mb-6 max-w-full bg-gray-400 dark:bg-slate-700 sm:rounded-md lg:max-w-6xl"
               sizes="(max-width: 900px) 400px, 900px"
               alt={post.description}
@@ -73,7 +81,7 @@ export default async function Page({ params }) {
       <article>
         <div className="prose-md prose-headings:font-heading prose-headings:leading-tighter container prose prose-lg mx-auto mt-8 max-w-3xl px-6 prose-headings:font-bold prose-headings:tracking-tighter prose-a:text-primary-600 prose-img:rounded-md prose-img:shadow-lg dark:prose-invert dark:prose-headings:text-slate-300 dark:prose-a:text-primary-400 sm:px-6 lg:prose-xl">
           <LikeButton postId={params.slug} />
-          <AddComment postId={params.slug} formData={commentsData.form} />
+          <AddComment postId={params.slug} />
           <Comments postId={params.slug} />
         </div>
       </article>
