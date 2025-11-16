@@ -1,0 +1,42 @@
+name: CI and Deploy to Vercel
+
+on:
+  push:
+    branches: 
+      - main
+
+jobs:
+  ci:
+    name: Run CI checks
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: TypeScript check
+        run: npm run typecheck --if-present
+
+      - name: Lint
+        run: npm run lint --if-present
+
+      - name: Run tests
+        run: npm test --if-present
+
+      - name: Build project
+        run: npm run build
+
+      - name: Trigger Vercel Deployment
+        if: success()
+        run: |
+          echo "Triggering Vercel Deploy Hook..."
+          curl -X POST "${{ secrets.VERCEL_DEPLOY_HOOK }}"
