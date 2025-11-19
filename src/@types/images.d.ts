@@ -1,14 +1,16 @@
+import type { StaticImageData } from 'next/image';
+
 declare module '*.png' {
-  const value: string;
+  const value: StaticImageData;
   export default value;
 }
 
 declare module '*.jpg' {
-  const value: string;
+  const value: StaticImageData;
   export default value;
 }
 
 declare module '*.svg' {
-  const value: string;
+  const value: StaticImageData;
   export default value;
 }
