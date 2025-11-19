@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`ToggleMenu Component matches the snapshot 1`] = `
+<button
+  aria-label="Toggle Menu"
+  class="ml-1.5 inline-flex items-center rounded-lg p-2.5 text-sm text-gray-500 transition hover:bg-gray-100 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-800 dark:focus:ring-gray-700"
+  type="button"
+>
+  <div
+    class="h-6 w-6"
+    data-testid="icon-menu"
+  />
+</button>
+`;

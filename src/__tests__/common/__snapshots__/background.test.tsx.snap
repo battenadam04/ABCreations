@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`Background Component matches snapshot 1`] = `
+<div
+  class="absolute inset-0 bg-primary-50 dark:bg-slate-800"
+>
+  <span>
+    Snapshot
+  </span>
+</div>
+`;

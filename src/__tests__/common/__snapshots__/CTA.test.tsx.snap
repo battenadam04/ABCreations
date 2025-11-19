@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`CTA Component renders snapshot 1`] = `
+<div
+  class="flex w-auto cursor-pointer"
+>
+  <a
+    class="inline-flex items-center justify-center w-full sm:mb-0 "
+    href="/test"
+  >
+    Click Here
+  </a>
+</div>
+`;

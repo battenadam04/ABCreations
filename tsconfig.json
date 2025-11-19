@@ -31,7 +31,7 @@
     ".next/types/**/*.ts",
     "app/(blogs)/blog/page.tsx",
     "app/(blogs)/[slug]/page.tsx",
-    "src/shared/data/pages/api/sendMail.js",
+    "src/shared/data/pages/api/sendMail.js", "src/__mocks__/fileMock.js", "jest.config.js", "jest.setup.js"
   ],
   "exclude": ["node_modules"],
 }

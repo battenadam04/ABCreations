@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`DividerLine matches snapshot 1`] = `
+<hr
+  class="border-gray-200 dark:border-gray-700 my-4"
+/>
+`;

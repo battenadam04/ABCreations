@@ -1,0 +1,58 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`AddComment Component matches snapshot 1`] = `
+<form
+  class="mb-50 mt-15"
+  id="contactForm"
+>
+  <div
+    class="mx-0 mb-1 sm:mb-4"
+  >
+    <div
+      class="mx-0 mb-1 sm:mb-4"
+    >
+      <label
+        class="pb-1 text-xs uppercase tracking-wider"
+        for="username"
+      >
+        username
+      </label>
+      <input
+        autocomplete="off"
+        class="mb-2 w-full rounded-md border border-gray-400 py-2 pl-2 pr-4 shadow-md dark:text-gray-300 sm:mb-0"
+        name="username"
+        placeholder="Username"
+        type="text"
+      />
+    </div>
+  </div>
+  <div
+    class="mx-0 mb-1 sm:mb-4"
+  >
+    <label
+      class="pb-1 text-xs uppercase tracking-wider"
+      for="comment"
+    >
+      Drop a comment
+    </label>
+    <textarea
+      class="mb-2 w-full rounded-md border border-gray-400 py-2 pl-2 pr-4 shadow-md dark:text-gray-300 sm:mb-0"
+      cols="30"
+      id="comment"
+      name="comment"
+      placeholder="Drop a comment..."
+      rows="5"
+    />
+  </div>
+  <div
+    class="text-center"
+  >
+    <button
+      class="btn btn-primary sm:mb-20 float-right"
+      type="submit"
+    >
+      Add comment
+    </button>
+  </div>
+</form>
+`;

@@ -1,6 +1,5 @@
 'use client';
 
-import { useState, useEffect } from 'react';
 import useSWR from 'swr';
 import Form from './Form';
 import { IAddComment, IsubmitComment } from '~/shared/interfaces/addComment';
@@ -16,7 +15,7 @@ const fetcher = (url: string) =>
 
 const AddComment = ({ postId }: IAddComment) => {
 
-  const { data: comments, error, mutate } = useSWR(`/api/comments/${postId}`, fetcher);
+  const { mutate } = useSWR(`/api/comments/${postId}`, fetcher);
 
   const handleAddComment = ({ username, comment, onCommentAdded }: IsubmitComment) => {
     fetch('/api/addComment', {

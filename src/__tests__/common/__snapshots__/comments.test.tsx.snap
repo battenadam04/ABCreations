@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`Comments Component matches snapshot 1`] = `
+<div
+  columns="1"
+  data-testid="comments"
+  header="[object Object]"
+  items="[object Object]"
+/>
+`;

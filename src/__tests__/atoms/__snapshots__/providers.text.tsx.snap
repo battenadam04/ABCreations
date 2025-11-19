@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`Providers Component matches the snapshot 1`] = `
+<div
+  data-testid="theme-provider"
+>
+  <div>
+    Snapshot Test
+  </div>
+</div>
+`;

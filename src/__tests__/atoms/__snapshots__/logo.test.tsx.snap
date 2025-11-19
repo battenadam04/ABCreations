@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`Logo Component matches the snapshot 1`] = `
+<span
+  class="ml-2 self-center whitespace-nowrap text-2xl font-bold text-gray-900 dark:text-white md:text-xl"
+>
+  AB Creative Labs
+</span>
+`;
