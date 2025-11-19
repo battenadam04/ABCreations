@@ -8,7 +8,7 @@ describe('Background Component', () => {
     render(
       <Background hasBackground={true}>
         <p>Test Child</p>
-      </Background>
+      </Background>,
     );
 
     expect(screen.getByText('Test Child')).toBeInTheDocument();
@@ -18,7 +18,7 @@ describe('Background Component', () => {
     render(
       <Background hasBackground={true}>
         <div>Child</div>
-      </Background>
+      </Background>,
     );
 
     const container = screen.getByText('Child').parentElement;
@@ -33,7 +33,7 @@ describe('Background Component', () => {
     render(
       <Background hasBackground={false}>
         <div>Child</div>
-      </Background>
+      </Background>,
     );
 
     const container = screen.getByText('Child').parentElement;
@@ -46,7 +46,7 @@ describe('Background Component', () => {
     const { container } = render(
       <Background hasBackground={true}>
         <span>Snapshot</span>
-      </Background>
+      </Background>,
     );
 
     expect(container.firstChild).toMatchSnapshot();

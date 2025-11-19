@@ -1,5 +1,6 @@
 import forexTrading from '~/assets/images/trading-blog-banner.png';
 import forexIndicators from '~/assets/images/forex-indicator-banner.png';
+import { ICommentsFormData } from '~/shared/interfaces/addComment';
 
 export const blogContent = {
   images: [
@@ -19,7 +20,7 @@ export const blogContent = {
 };
 
 // Comments form on blog pages *******************
-export const commentsData = {
+export const commentsData: ICommentsFormData = {
   id: 'comments',
   hasBackground: true,
   header: {

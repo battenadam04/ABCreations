@@ -3,12 +3,9 @@ import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import Providers from '~/components/atoms/Providers';
 
-
 // Mock next-themes so ThemeProvider renders without requiring browser APIs
 jest.mock('next-themes', () => ({
-  ThemeProvider: ({ children }: { children: React.ReactNode }) => (
-    <div data-testid="theme-provider">{children}</div>
-  ),
+  ThemeProvider: ({ children }: { children: React.ReactNode }) => <div data-testid="theme-provider">{children}</div>,
 }));
 
 describe('Providers Component', () => {
@@ -16,7 +13,7 @@ describe('Providers Component', () => {
     render(
       <Providers>
         <div>Test Child</div>
-      </Providers>
+      </Providers>,
     );
 
     expect(screen.getByTestId('theme-provider')).toBeInTheDocument();
@@ -26,7 +23,7 @@ describe('Providers Component', () => {
     render(
       <Providers>
         <span>Hello World</span>
-      </Providers>
+      </Providers>,
     );
 
     expect(screen.getByText('Hello World')).toBeInTheDocument();
@@ -36,7 +33,7 @@ describe('Providers Component', () => {
     render(
       <Providers>
         <p>Nested content</p>
-      </Providers>
+      </Providers>,
     );
 
     const provider = screen.getByTestId('theme-provider');
@@ -47,7 +44,7 @@ describe('Providers Component', () => {
     const { container } = render(
       <Providers>
         <div>Snapshot Test</div>
-      </Providers>
+      </Providers>,
     );
 
     expect(container.firstChild).toMatchSnapshot();

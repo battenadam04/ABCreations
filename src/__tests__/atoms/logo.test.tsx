@@ -3,7 +3,6 @@ import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import Logo from '~/components/atoms/Logo';
 
-
 describe('Logo Component', () => {
   it('renders without crashing', () => {
     render(<Logo />);
@@ -28,7 +27,7 @@ describe('Logo Component', () => {
       'font-bold',
       'text-gray-900',
       'dark:text-white',
-      'md:text-xl'
+      'md:text-xl',
     );
   });
 

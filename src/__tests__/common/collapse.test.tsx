@@ -3,7 +3,6 @@ import { render, screen, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import Collapse from '~/components/common/Collapse';
 
-
 jest.mock('~/hooks/useCollapse', () => ({
   __esModule: true,
   default: () => ({

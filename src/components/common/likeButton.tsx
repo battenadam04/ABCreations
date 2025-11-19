@@ -18,7 +18,7 @@ const LikeButton = ({ postId }: { [key: string]: string }) => {
   const { data, error } = useSWR(`/api/blogLikes/${postId}`, fetcher);
 
   useEffect(() => {
-    if (data  && !error) {
+    if (data && !error) {
       console.log('check likes ', data);
       setTotalLikes(Number(data.totalLikes));
       setTotalDislikes(Number(data.totalDislikes));
@@ -83,7 +83,7 @@ const LikeButton = ({ postId }: { [key: string]: string }) => {
           </svg>
         }
       </button>
-      <span className='w-8'>{totalLikes}</span>
+      <span className="w-8">{totalLikes}</span>
       <button onClick={() => handleLikeClick(false)} className="hover:text-sky-300">
         {
           <svg
@@ -103,7 +103,7 @@ const LikeButton = ({ postId }: { [key: string]: string }) => {
           </svg>
         }
       </button>
-      <span className='w-8'>{totalDislikes}</span>
+      <span className="w-8">{totalDislikes}</span>
     </div>
   );
 };

@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import '@testing-library/jest-dom'
+import '@testing-library/jest-dom';
 import Comments from '~/components/common/Comments';
 
 jest.mock('swr');
@@ -9,9 +9,7 @@ jest.mock('date-fns', () => ({
 }));
 
 jest.mock('~/components/widgets/spinner', () => () => <div data-testid="spinner" />);
-jest.mock('~/components/widgets/Features4', () => (props: any) => (
-  <div data-testid="features" {...props} />
-));
+jest.mock('~/components/widgets/Features4', () => (props: any) => <div data-testid="features" {...props} />);
 
 const useSWRMock = require('swr');
 
@@ -62,8 +60,7 @@ describe('Comments Component', () => {
 
     render(<Comments postId="123" />);
 
-
-     expect(screen.getByText('Comments')).toBeInTheDocument();
+    expect(screen.getByText('Comments')).toBeInTheDocument();
     expect(screen.getByText('John')).toBeInTheDocument();
     expect(screen.getByText('Nice post!')).toBeInTheDocument();
     expect(screen.getByText('01-01-2025 12:00')).toBeInTheDocument();

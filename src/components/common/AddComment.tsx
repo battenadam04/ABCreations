@@ -14,7 +14,6 @@ const fetcher = (url: string) =>
   }).then((res) => res.json());
 
 const AddComment = ({ postId }: IAddComment) => {
-
   const { mutate } = useSWR(`/api/comments/${postId}`, fetcher);
 
   const handleAddComment = ({ username, comment, onCommentAdded }: IsubmitComment) => {

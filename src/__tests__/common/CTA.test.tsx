@@ -3,7 +3,6 @@ import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import CTA from '~/components/common/CTA';
 
-
 jest.mock('next/link', () => {
   return ({ children, href, ...rest }: any) => (
     <a href={href} {...rest}>
@@ -16,9 +15,7 @@ jest.mock('tailwind-merge', () => ({
   twMerge: (...classes: string[]) => classes.filter(Boolean).join(' '),
 }));
 
-const MockIcon = ({ className }: { className?: string }) => (
-  <div data-testid="mock-icon" className={className} />
-);
+const MockIcon = ({ className }: { className?: string }) => <div data-testid="mock-icon" className={className} />;
 
 describe('CTA Component', () => {
   const baseProps = {
@@ -26,7 +23,7 @@ describe('CTA Component', () => {
       text: 'Click Here',
       href: '/test',
       targetBlank: false,
-      icon: null,
+      icon: undefined,
     },
     containerClass: '',
     linkClass: '',
@@ -60,7 +57,7 @@ describe('CTA Component', () => {
   it('does not render when missing text and icon', () => {
     const props = {
       ...baseProps,
-      callToAction: { text: '', href: '/test', icon: null },
+      callToAction: { text: '', href: '/test', icon: undefined },
     };
     const { container } = render(<CTA {...props} />);
     expect(container.firstChild).toBeNull();

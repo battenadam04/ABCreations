@@ -9,8 +9,8 @@ export async function POST(req: NextRequest) {
     const timestamp = new Date().toDateString();
     const sql = neon(process.env.DATABASE_URL || '');
 
-     const name = sanitizeUserInput(username).plain;
-      const message = sanitizeUserInput(comment).plain;
+    const name = sanitizeUserInput(username).plain;
+    const message = sanitizeUserInput(comment).plain;
 
     // reject if spam flags are high
     const spamCheck = sanitizeUserInput(comment);

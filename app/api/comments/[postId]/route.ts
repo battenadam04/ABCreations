@@ -18,7 +18,6 @@ export async function GET(request: NextRequest, { params }: { params: Promise<{ 
 
     /** Sanitise and remove all spam */
 
-
     return NextResponse.json({ message: 'Comments successfully retrieved', result }, { status: 200 });
   } catch (error: any) {
     console.error('Error retrieving comments:', error);

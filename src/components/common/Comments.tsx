@@ -39,7 +39,7 @@ const Comments = ({ postId }: { [key: string]: string }) => {
   if (isLoading) return <Spinner />;
   if (error) return <div>Error loading comments</div>;
 
-  return <Features4 data-testid="comments" columns={1} items={formattedComments} header={{title:"Comments"}} />;
+  return <Features4 data-testid="comments" columns={1} items={formattedComments} header={{ title: 'Comments' }} />;
 };
 
 export default Comments;

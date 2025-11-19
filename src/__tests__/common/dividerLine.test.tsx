@@ -3,7 +3,6 @@ import { render } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import DividerLine from '~/components/common/DividerLine';
 
-
 jest.mock('tailwind-merge', () => ({
   twMerge: (...classes: string[]) => classes.filter(Boolean).join(' '),
 }));

@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "target": "es5",
+    "target": "es2020",
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
@@ -31,7 +31,11 @@
     ".next/types/**/*.ts",
     "app/(blogs)/blog/page.tsx",
     "app/(blogs)/[slug]/page.tsx",
-    "src/shared/data/pages/api/sendMail.js", "src/__mocks__/fileMock.js", "jest.config.js", "jest.setup.js"
+    "src/shared/data/pages/api/sendMail.js",
+    "src/__mocks__/fileMock.js",
+    "jest.config.js",
+    "jest.setup.js",
   ],
   "exclude": ["node_modules"],
+  "downlevelIteration": true,
 }

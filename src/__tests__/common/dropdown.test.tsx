@@ -11,22 +11,16 @@ jest.mock('@tabler/icons-react', () => ({
 }));
 
 const mockOptions: Tab[] = [
-  { link: { label: 'Option A', href: '/' } },
-  { link: { label: 'Option B', href: '/' } },
-  { link: { label: 'Option C', href: '/' } },
+  { link: { label: 'Option A', href: '/' }, items: [] },
+  { link: { label: 'Option B', href: '/' }, items: [] },
+  { link: { label: 'Option C', href: '/' }, items: [] },
 ];
 
 describe('Dropdown', () => {
   const onActiveTabSelected = jest.fn();
 
   const setup = (activeTab = 0) =>
-    render(
-      <Dropdown
-        options={mockOptions}
-        activeTab={activeTab}
-        onActiveTabSelected={onActiveTabSelected}
-      />
-    );
+    render(<Dropdown options={mockOptions} activeTab={activeTab} onActiveTabSelected={onActiveTabSelected} />);
 
   beforeEach(() => {
     jest.clearAllMocks();

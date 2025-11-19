@@ -3,7 +3,6 @@ import { render, screen, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import ToggleDarkMode from '~/components/atoms/ToggleDarkMode';
 
-
 // Mock icons to simple identifiable components
 jest.mock('@tabler/icons-react', () => ({
   IconSun: (props: any) => <div data-testid="icon-sun" {...props} />,
@@ -17,7 +16,7 @@ jest.mock('next-themes', () => ({
   useTheme: () => ({
     theme: 'light',
     systemTheme: 'light',
-    setTheme: mockSetTheme
+    setTheme: mockSetTheme,
   }),
 }));
 

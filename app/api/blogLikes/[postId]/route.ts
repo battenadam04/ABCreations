@@ -10,7 +10,7 @@ export async function GET(request: NextRequest, { params }: { params: Promise<{ 
     // Use parameterized query to prevent SQL injection
     const result = await sql`SELECT total_likes, total_dislikes FROM blogs WHERE LOWER(blog_title) = ${cleanedPostId}`;
 
-    console.log("check results", result);
+    console.log('check results', result);
     // Check if any row was found
     if (result.length === 0) {
       return NextResponse.json({ message: 'Blog not found' }, { status: 404 });
@@ -18,7 +18,7 @@ export async function GET(request: NextRequest, { params }: { params: Promise<{ 
 
     // Extract total_likes from the result and return it
     const totalLikes = result[0].total_likes;
-        const totalDislikes = result[0].total_dislikes;
+    const totalDislikes = result[0].total_dislikes;
     return NextResponse.json({ totalLikes, totalDislikes }, { status: 200 });
   } catch (error) {
     console.error('Error executing query:', error);
