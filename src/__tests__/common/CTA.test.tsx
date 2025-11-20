@@ -3,12 +3,16 @@ import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import CTA from '~/components/common/CTA';
 
-jest.mock('next/link', () => {
-  return ({ children, href, ...rest }: any) => (
+jest.mock("next/link", () => {
+  const MockLink = ({ children, href, ...rest }: any) => (
     <a href={href} {...rest}>
       {children}
     </a>
   );
+
+  MockLink.displayName = "MockNextLink";
+
+  return MockLink;
 });
 
 jest.mock('tailwind-merge', () => ({

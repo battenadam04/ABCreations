@@ -8,8 +8,17 @@ jest.mock('date-fns', () => ({
   format: jest.fn(() => '01-01-2025 12:00'),
 }));
 
-jest.mock('~/components/widgets/spinner', () => () => <div data-testid="spinner" />);
-jest.mock('~/components/widgets/Features4', () => (props: any) => <div data-testid="features" {...props} />);
+jest.mock('~/components/widgets/spinner', () => {
+  const MockSpinner = () => <div data-testid="spinner" />;
+  MockSpinner.displayName = "MockSpinner";
+  return MockSpinner;
+});
+
+jest.mock('~/components/widgets/Features4', () => {
+  const MockFeatures4 = (props: any) => <div data-testid="features" {...props} />;
+  MockFeatures4.displayName = "MockFeatures4";
+  return MockFeatures4;
+});
 
 const useSWRMock = require('swr');
 

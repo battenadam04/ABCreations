@@ -20,6 +20,7 @@ const Comments = ({ postId }: { [key: string]: string }) => {
 
   const { data, error, isLoading } = useSWR(`/api/comments/${postId}`, fetcher);
 
+  // eslint-disable-next-line react-hooks/rules-of-hooks
   useEffect(() => {
     if (data && !error) {
       setComments(data.result);

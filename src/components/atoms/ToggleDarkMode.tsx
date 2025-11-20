@@ -12,6 +12,7 @@ const ToggleDarkMode = () => {
 
   const handleOnClick = () => setTheme(currentTheme === 'dark' ? 'light' : 'dark');
 
+  // eslint-disable-next-line react-hooks/rules-of-hooks
   useEffect(() => {
     setMounted(true);
   }, []);

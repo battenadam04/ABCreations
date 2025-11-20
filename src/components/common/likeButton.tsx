@@ -17,9 +17,9 @@ const LikeButton = ({ postId }: { [key: string]: string }) => {
   const [userReaction, setUserReaction] = useState<'like' | 'dislike' | undefined>(undefined);
   const { data, error } = useSWR(`/api/blogLikes/${postId}`, fetcher);
 
+  // eslint-disable-next-line react-hooks/rules-of-hooks
   useEffect(() => {
     if (data && !error) {
-      console.log('check likes ', data);
       setTotalLikes(Number(data.totalLikes));
       setTotalDislikes(Number(data.totalDislikes));
     } else if (error) {
