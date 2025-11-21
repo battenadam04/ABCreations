@@ -40,7 +40,7 @@ jobs:
           sleep 7
      
       - name: Collect Lighthouse
-        run: lhci collect
+        run: npx lhci collect
 
       - name: Upload Lighthouse Report
         uses: actions/upload-artifact@v4
