@@ -38,15 +38,18 @@ jobs:
         run: |
           nohup npm run start &
           sleep 7
-
-      - name: Run Lighthouse CI
-        run: npm run lhci
+     
+      - name: Collect Lighthouse
+        run: lhci collect
 
       - name: Upload Lighthouse Report
         uses: actions/upload-artifact@v4
         with:
           name: lighthouse-report
           path: lhci-report
+
+      - name: Assert Lighthouse Scores
+        run: lhci assert
 
       - name: Trigger Vercel Deployment
         if: success()
