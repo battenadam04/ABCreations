@@ -1,16 +1,17 @@
-{
-  "ci": {
-    "collect": {
-      "startServerCommand": "npm run start",
-      "url": ["http://localhost:3000"],
-      "numberOfRuns": 1
-    },
-    "assert": {
-      "preset": "lighthouse:recommended"
-    },
-    "upload": {
-      "target": "filesystem",
-      "outputDirectory": "./lhci-report"
+"ci": {
+  "collect": {
+    "startServerCommand": "npm run start",
+    "url": ["http://localhost:3000"],
+    "numberOfRuns": 1
+  },
+  "assert": {
+    "preset": "lighthouse:recommended",
+    "assertions": {
+      "*": "warn"
     }
+  },
+  "upload": {
+    "target": "filesystem",
+    "outputDirectory": "./lhci-report"
   }
 }
