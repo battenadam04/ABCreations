@@ -7,7 +7,7 @@ module.exports = {
   basePath: SITE.basePathname !== '/' ? SITE.basePathname : '',
   poweredByHeader: false,
   images: {
-        qualities: [25, 50, 75],
+    qualities: [25, 50, 75],
     remotePatterns: [
       {
         protocol: 'https',

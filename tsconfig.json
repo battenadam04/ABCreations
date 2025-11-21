@@ -17,10 +17,10 @@
 
     "baseUrl": "src",
     "paths": {
-      "~/*": ["*"]
+      "~/*": ["*"],
     },
 
-    "plugins": [{ "name": "next" }]
+    "plugins": [{ "name": "next" }],
   },
 
   "include": [
@@ -34,8 +34,8 @@
     "src/__mocks__/fileMock.js",
     "jest.config.js",
     "jest.setup.js",
-    "src/@types/**/*.d.ts"
+    "src/@types/**/*.d.ts",
   ],
 
-  "exclude": ["node_modules"]
+  "exclude": ["node_modules"],
 }

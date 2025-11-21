@@ -33,7 +33,9 @@ export default function RootLayout({ children }: LayoutProps) {
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </head>
-      <body className={`tracking-tight antialiased text-gray-900 dark:text-slate-300  ${customFont.variable} font-sans`} >
+      <body
+        className={`tracking-tight antialiased text-gray-900 dark:text-slate-300  ${customFont.variable} font-sans`}
+      >
         <Providers>
           {/** hide until handle data collection costs with gov */}
           {/* <Announcement /> */}

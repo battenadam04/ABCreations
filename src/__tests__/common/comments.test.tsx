@@ -10,13 +10,13 @@ jest.mock('date-fns', () => ({
 
 jest.mock('~/components/widgets/spinner', () => {
   const MockSpinner = () => <div data-testid="spinner" />;
-  MockSpinner.displayName = "MockSpinner";
+  MockSpinner.displayName = 'MockSpinner';
   return MockSpinner;
 });
 
 jest.mock('~/components/widgets/Features4', () => {
   const MockFeatures4 = (props: any) => <div data-testid="features" {...props} />;
-  MockFeatures4.displayName = "MockFeatures4";
+  MockFeatures4.displayName = 'MockFeatures4';
   return MockFeatures4;
 });
 
