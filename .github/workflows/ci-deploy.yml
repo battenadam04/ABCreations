@@ -42,6 +42,9 @@ jobs:
       - name: Collect Lighthouse
         run: npx lhci collect
 
+      - name: Make upload folder
+        run: mkdir -p lhci-report
+
       - name: Upload Lighthouse Report
         uses: actions/upload-artifact@v4
         with:
