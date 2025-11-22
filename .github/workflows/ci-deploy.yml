@@ -8,33 +8,24 @@ on:
 jobs:
   ci:
     runs-on: ubuntu-latest
-
     steps:
-      # -----------------------
-      # CHECKOUT CURRENT COMMIT
-      # -----------------------
-      - name: Checkout repo
+      - name: Checkout repo (shallow but includes previous commit)
         uses: actions/checkout@v4
         with:
-          fetch-depth: 2   # IMPORTANT — allows checking out previous commit
+          fetch-depth: 2
 
-      - name: Get previous commit
+      - name: Get previous commit sha
         id: prev
         run: echo "sha=$(git rev-parse HEAD~1)" >> $GITHUB_OUTPUT
 
-      # -----------------------
-      # SETUP NODE
-      # -----------------------
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: 20
           cache: npm
 
-      # -----------------------
-      # INSTALL & BUILD CURRENT COMMIT
-      # -----------------------
-      - name: Install dependencies
+      # ---------- CURRENT COMMIT (port 3000) ----------
+      - name: Install dependencies (current)
         run: npm ci
 
       - name: TypeScript check
@@ -46,62 +37,98 @@ jobs:
       - name: Run tests
         run: npm test --if-present
 
-      - name: Build app (current commit)
+      - name: Build app (current)
         run: npm run build
 
-      - name: Start server (current commit)
+      - name: Start server (current, PORT=3000) and save PID
         run: |
-          nohup npm run start &
+          export PORT=3000
+          nohup env PORT=$PORT npm run start > server-current.log 2>&1 &
+          echo $! > server-current.pid
+          echo "server current pid: $(cat server-current.pid)"
           sleep 7
 
-      - name: Run Lighthouse (current commit)
-        run: npx lhci collect --outputDir=./lhci-current
+      - name: Collect Lighthouse (current)
+        run: |
+          mkdir -p lhci-current
+          npx lhci collect --url=http://localhost:3000 --outputDir=./lhci-current
+          echo "Current report files:"
+          ls -la lhci-current || true
 
-      # Save current report
-      - name: Upload current report
+      - name: Stop current server
+        run: |
+          if [ -f server-current.pid ]; then
+            kill "$(cat server-current.pid)" || true
+            rm -f server-current.pid
+            sleep 2
+          fi
+
+      - name: Upload current report (artifact)
         uses: actions/upload-artifact@v4
         with:
           name: lighthouse-current
           path: lhci-current
 
-      # -----------------------
-      # CHECKOUT PREVIOUS COMMIT
-      # -----------------------
-      - name: Checkout previous commit
+      # ---------- PREVIOUS COMMIT (port 3001) ----------
+      - name: Checkout previous commit (detached)
         run: |
           git checkout ${{ steps.prev.outputs.sha }}
-          npm ci
-          npm run build
+          git status --porcelain || true
+          echo "Checked out $(git rev-parse --short HEAD)"
 
-      - name: Start server (previous commit)
+      - name: Install dependencies (previous)
+        run: npm ci
+
+      - name: Build app (previous)
+        run: npm run build
+
+      - name: Start server (previous, PORT=3001) and save PID
         run: |
-          nohup npm run start &
+          export PORT=3001
+          nohup env PORT=$PORT npm run start > server-previous.log 2>&1 &
+          echo $! > server-previous.pid
+          echo "server previous pid: $(cat server-previous.pid)"
           sleep 7
 
-      - name: Run Lighthouse on previous commit
-        run: npx lhci collect --outputDir=./lhci-previous
+      - name: Collect Lighthouse (previous)
+        run: |
+          mkdir -p lhci-previous
+          npx lhci collect --url=http://localhost:3001 --outputDir=./lhci-previous
+          echo "Previous report files:"
+          ls -la lhci-previous || true
 
-      # Save previous report
-      - name: Upload previous report
+      - name: Stop previous server
+        run: |
+          if [ -f server-previous.pid ]; then
+            kill "$(cat server-previous.pid)" || true
+            rm -f server-previous.pid
+            sleep 2
+          fi
+
+      - name: Upload previous report (artifact)
         uses: actions/upload-artifact@v4
         with:
           name: lighthouse-previous
           path: lhci-previous
 
-      # -----------------------
-      # ASSERT SCORES BETWEEN CURRENT & PREVIOUS
-      # -----------------------
-      - name: Assert Lighthouse Regression
+      # ---------- ASSERT / COMPARE ----------
+      - name: Checkout back to HEAD (current branch) before assert
+        run: git checkout -  # return to previous branch/HEAD
+
+      - name: Assert Lighthouse Regression (compare previous -> current)
         run: |
+          # Optional: show folders to ensure both exist
+          echo "lhci-current contents:" && ls -la lhci-current || true
+          echo "lhci-previous contents:" && ls -la lhci-previous || true
+
+          # Run the assertion comparing the two report folders.
+          # Adjust budgets file if you use one; otherwise remove the --budgetsFile arg.
           npx lhci assert \
             --budgetsFile=./lighthouse-budgets.json \
-            --collect.url=http://localhost:3000 \
             --compare.baselineFolder=./lhci-previous \
             --compare.compareFolder=./lhci-current
 
-      # -----------------------
-      # DEPLOY TO VERCEL
-      # -----------------------
+      # ---------- DEPLOY ----------
       - name: Trigger Vercel Deployment
         if: success()
         run: |
