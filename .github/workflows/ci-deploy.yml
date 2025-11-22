@@ -117,16 +117,13 @@ jobs:
 
       - name: Assert Lighthouse Regression (compare previous -> current)
         run: |
-          # Optional: show folders to ensure both exist
           echo "lhci-current contents:" && ls -la lhci-current || true
           echo "lhci-previous contents:" && ls -la lhci-previous || true
 
-          # Run the assertion comparing the two report folders.
-          # Adjust budgets file if you use one; otherwise remove the --budgetsFile arg.
           npx lhci assert \
-            --budgetsFile=./lighthouse-budgets.json \
             --compare.baselineFolder=./lhci-previous \
             --compare.compareFolder=./lhci-current
+
 
       # ---------- DEPLOY ----------
       - name: Trigger Vercel Deployment
