@@ -8,7 +8,49 @@
     "assert": {
       "preset": "lighthouse:recommended",
       "assertions": {
-        "*": "warn"
+        "*": "warn",
+
+        "uses-responsive-images": [
+          "warn",
+          {
+            "maxLength": 1
+          }
+        ],
+
+        "largest-contentful-paint": [
+          "warn",
+          {
+            "minScore": 0.88
+          }
+        ],
+
+        "legacy-javascript": [
+          "warn",
+          {
+            "maxLength": 1
+          }
+        ],
+
+        "max-potential-fid": [
+          "warn",
+          {
+            "minScore": 0.86
+          }
+        ],
+
+        "render-blocking-resources": [
+          "warn",
+          {
+            "maxLength": 1
+          }
+        ],
+
+        "uses-long-cache-ttl": [
+          "warn",
+          {
+            "maxLength": 1
+          }
+        ]
       }
     },
     "upload": {
