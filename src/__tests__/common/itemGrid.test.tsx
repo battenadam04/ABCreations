@@ -1,15 +1,16 @@
 import { render, screen, waitFor } from '@testing-library/react';
 import ItemGrid from '~/components/common/ItemGrid';
 import { IconMenu, IconX } from '@tabler/icons-react';
+import { ItemGrid as IItemGrid, Item } from '~/shared/types';
 
 describe('ItemGrid Component', () => {
-  const items = [
-    { title: 'Item 1', description: 'Description 1', icon: IconMenu, callToAction: { text: 'Go' }, timestamp: '10:00' },
-    { title: 'Item 2', description: 'Description 2', icon: IconX, callToAction: { text: 'Click' } },
+  const items: Item[] = [
+    { title: 'Item 1', description: 'Description 1', icon: IconMenu, callToAction: { href:"", text: 'Go' }, timestamp: '10:00' },
+    { title: 'Item 2', description: 'Description 2', icon: IconX, callToAction: { href: "", text: 'Click' } },
     { title: 'Item 3' }, // Only title
   ];
 
-  const defaultProps = {
+  const defaultProps: IItemGrid = {
     id: 'test-grid',
     items,
     defaultColumns: 3,

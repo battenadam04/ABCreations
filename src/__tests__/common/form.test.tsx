@@ -1,8 +1,9 @@
 import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import Form from '~/components/common/Form';
+import { FormProps } from '~/shared/types';
 
 describe('Form Component', () => {
-  const defaultProps = {
+  const defaultProps: FormProps = {
     id: 'test-form',
     title: 'Contact Us',
     description: 'Please fill out the form',
