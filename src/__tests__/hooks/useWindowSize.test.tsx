@@ -25,7 +25,6 @@ describe('useWindowSize hook', () => {
   test('should update window size when window is resized', () => {
     const { result } = renderHook(() => useWindowSize());
 
-
     act(() => {
       window.innerWidth = 500;
       window.innerHeight = 300;

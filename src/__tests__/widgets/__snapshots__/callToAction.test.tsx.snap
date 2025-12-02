@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`CallToAction matches snapshot 1`] = `
+<div>
+  <section
+    class="relative not-prose scroll-mt-[72px] clear-both"
+    data-testid="widget-wrapper-section"
+    id="cta-section"
+  >
+    <div
+      class="absolute inset-0 bg-transparent"
+    />
+    <div
+      class="relative mx-auto max-w-7xl px-4 md:px-6 py-12 md:py-16 lg:py-20 text-default"
+    >
+      <div
+        class="card mx-auto max-w-3xl p-6 text-center"
+      >
+        <h2
+          class="leading-tighter font-heading mb-4 text-4xl font-bold tracking-tighter md:text-4xl"
+        >
+          Main Title
+        </h2>
+        <p
+          class="text-xl text-gray-600 dark:text-slate-400"
+        >
+          Sub Title
+        </p>
+        <div
+          class="flex w-auto cursor-pointer mt-6 sm:mx-auto sm:w-fit"
+        >
+          <a
+            class="inline-flex items-center justify-center w-full sm:mb-0 btn btn-primary"
+            href="/test"
+          >
+            Click here
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+`;

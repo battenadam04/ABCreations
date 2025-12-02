@@ -1,0 +1,269 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`Footer matches snapshot 1`] = `
+<div>
+  <footer
+    class="relative border-t border-gray-200 dark:border-slate-800"
+  >
+    <div
+      class="dark:bg-dark pointer-events-none absolute inset-0"
+    />
+    <div
+      class="relative mx-auto max-w-7xl px-4 dark:text-slate-300 sm:px-6"
+    >
+      <div
+        class="grid grid-cols-12 gap-4 gap-y-8 py-8 sm:gap-8 md:py-12"
+      >
+        <div
+          class="col-span-12 lg:col-span-4"
+        >
+          <div
+            class="mb-2"
+          >
+            <a
+              class="inline-block text-xl font-bold"
+              href="/"
+            >
+              AB Creation Labs Ltd
+            </a>
+          </div>
+          <div
+            class="text-muted text-sm"
+          >
+            <ul
+              class="mb-4 -ml-2 flex pl-2 md:order-1 md:mb-0"
+            >
+              <li>
+                <a
+                  aria-label="Terms & Conditions"
+                  class="duration-150 ease-in-out placeholder:transition hover:text-gray-700 hover:underline dark:text-gray-400"
+                  href="/terms"
+                >
+                  Terms & Conditions
+                </a>
+                <span
+                  class="mr-1"
+                >
+                   · 
+                </span>
+              </li>
+              <li>
+                <a
+                  aria-label="Privacy Policy"
+                  class="duration-150 ease-in-out placeholder:transition hover:text-gray-700 hover:underline dark:text-gray-400"
+                  href="/privacy"
+                >
+                  Privacy Policy
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div
+          class="col-span-6 md:col-span-3 lg:col-span-2"
+        >
+          <div
+            class="mb-2 font-medium dark:text-gray-300"
+          >
+            Product
+          </div>
+          <ul
+            class="text-sm"
+          >
+            <li
+              class="mb-2"
+            >
+              <a
+                aria-label="T-shirts"
+                class="text-muted transition duration-150 ease-in-out hover:text-gray-700 hover:underline dark:text-gray-400"
+                href="/tshirts"
+              >
+                T-shirts
+              </a>
+            </li>
+            <li
+              class="mb-2"
+            >
+              <a
+                aria-label="Books"
+                class="text-muted transition duration-150 ease-in-out hover:text-gray-700 hover:underline dark:text-gray-400"
+                href="/books"
+              >
+                Books
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div
+          class="col-span-6 md:col-span-3 lg:col-span-2"
+        >
+          <div
+            class="mb-2 font-medium dark:text-gray-300"
+          >
+            Platform
+          </div>
+          <ul
+            class="text-sm"
+          >
+            <li
+              class="mb-2"
+            >
+              <a
+                aria-label="Amazon"
+                class="text-muted transition duration-150 ease-in-out hover:text-gray-700 hover:underline dark:text-gray-400"
+                href="/"
+              >
+                Amazon
+              </a>
+            </li>
+            <li
+              class="mb-2"
+            >
+              <a
+                aria-label="goodreads"
+                class="text-muted transition duration-150 ease-in-out hover:text-gray-700 hover:underline dark:text-gray-400"
+                href="https://www.goodreads.com/author/show/30080857.Aiden_Blake"
+              >
+                goodreads
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div
+          class="col-span-6 md:col-span-3 lg:col-span-2"
+        >
+          <div
+            class="mb-2 font-medium dark:text-gray-300"
+          >
+            Support
+          </div>
+          <ul
+            class="text-sm"
+          >
+            <li
+              class="mb-2"
+            >
+              <a
+                aria-label="Contact"
+                class="text-muted transition duration-150 ease-in-out hover:text-gray-700 hover:underline dark:text-gray-400"
+                href="/contact"
+              >
+                Contact
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div
+          class="col-span-6 md:col-span-3 lg:col-span-2"
+        >
+          <div
+            class="mb-2 font-medium dark:text-gray-300"
+          >
+            Company
+          </div>
+          <ul
+            class="text-sm"
+          >
+            <li
+              class="mb-2"
+            >
+              <a
+                aria-label="About"
+                class="text-muted transition duration-150 ease-in-out hover:text-gray-700 hover:underline dark:text-gray-400"
+                href="/about"
+              >
+                About
+              </a>
+            </li>
+            <li
+              class="mb-2"
+            >
+              <a
+                aria-label="Blog"
+                class="text-muted transition duration-150 ease-in-out hover:text-gray-700 hover:underline dark:text-gray-400"
+                href="/blog"
+              >
+                Blog
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div
+        class="py-6 md:flex md:items-right md:justify-between md:py-8"
+      >
+        <ul
+          class="mb-4 -ml-2 flex md:order-1 md:ml-4 md:mb-0"
+        >
+          <li>
+            <a
+              aria-label="Twitter"
+              class="text-muted inline-flex items-center rounded-lg p-2.5 text-sm hover:bg-gray-100 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-700"
+              href="#"
+            >
+              <svg
+                class="h-5 w-5"
+                fill="none"
+                height="24"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+                width="24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c0 -.249 1.51 -2.772 1.818 -4.013z"
+                />
+              </svg>
+            </a>
+          </li>
+          <li>
+            <a
+              aria-label="Facebook"
+              class="text-muted inline-flex items-center rounded-lg p-2.5 text-sm hover:bg-gray-100 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-700"
+              href="#"
+            >
+              <svg
+                class="h-5 w-5"
+                fill="none"
+                height="24"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+                width="24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M7 10v4h3v7h4v-7h3l1 -4h-4v-2a1 1 0 0 1 1 -1h3v-4h-3a5 5 0 0 0 -5 5v2h-3"
+                />
+              </svg>
+            </a>
+          </li>
+        </ul>
+        <div
+          class="mr-4 text-sm dark:text-slate-400"
+        >
+          <span
+            class="float-left mr-1.5 h-5 w-5 rounded-sm bg-[url(https://onwidget.com/favicon/favicon-32x32.png)] bg-cover md:-mt-0.5 md:h-6 md:w-6"
+          />
+          Made by
+           
+          <a
+            class="text-blue-600 hover:underline dark:text-gray-200"
+            href="https://www.linkedin.com/in/adam-batten-92850243/"
+          >
+             
+            Adam Batten
+          </a>
+           
+          · All rights reserved.
+        </div>
+      </div>
+    </div>
+  </footer>
+</div>
+`;
