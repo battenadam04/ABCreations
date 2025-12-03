@@ -1,7 +1,6 @@
 import { renderHook, act } from '@testing-library/react';
 import useCollapse from '~/hooks/useCollapse';
 
-
 describe('useCollapse hook', () => {
   test('initial state should have activeIndex undefined', () => {
     const { result } = renderHook(() => useCollapse());
@@ -42,7 +41,7 @@ describe('useCollapse hook', () => {
     expect(result.current.activeIndex).toBe(1);
 
     act(() => {
-      result.current.handleSetIndex(1); // selecting same index
+      result.current.handleSetIndex(1);
     });
     expect(result.current.activeIndex).toBeUndefined();
   });

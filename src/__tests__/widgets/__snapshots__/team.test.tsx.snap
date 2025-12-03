@@ -1,0 +1,119 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`Team matches snapshot 1`] = `
+<div>
+  <section
+    class="relative not-prose scroll-mt-[72px] clear-both"
+    data-testid="widget-wrapper-section"
+    id="team-section"
+  >
+    <div
+      class="absolute inset-0 bg-transparent"
+    />
+    <div
+      class="relative mx-auto max-w-7xl px-4 md:px-6 py-12 md:py-16 lg:py-20 text-default"
+    >
+      <div
+        class="mb-4"
+      >
+        <div
+          class="mb-6 mx-auto md:mb-12 text-center"
+        >
+          <h2
+            class="font-heading mb-4 font-bold tracking-tight text-2xl sm:text-3xl"
+          >
+            Our Team
+          </h2>
+          <p
+            class="mx-auto mt-4 max-w-3xl text-xl text-gray-600 dark:text-slate-400 text-center"
+          >
+            Meet the experts
+          </p>
+        </div>
+      </div>
+      <div
+        class="flex items-stretch justify-center"
+      >
+        <div
+          class="grid grid-cols-1 gap-4 dark:text-white sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4"
+        >
+          <div
+            class="p-2"
+          >
+            <div
+              class=""
+            >
+              <img
+                alt="Alice"
+                class="h-72 w-60 rounded-md object-cover shadow-lg bg-gray-500 dark:bg-slate-700"
+                data-nimg="1"
+                decoding="async"
+                height="320"
+                loading="lazy"
+                src="/_next/image?url=%2Fimg%2Falice.png&w=640&q=75"
+                srcset="/_next/image?url=%2Fimg%2Falice.png&w=256&q=75 1x, /_next/image?url=%2Fimg%2Falice.png&w=640&q=75 2x"
+                style="color: transparent;"
+                width="240"
+              />
+              <div
+                class="relative mt-3 text-center"
+              >
+                <h3
+                  class="mb-1.5 text-xl font-bold"
+                >
+                  Alice
+                </h3>
+                <p
+                  class="mb-7 text-base font-medium capitalize text-gray-600 dark:text-slate-400"
+                >
+                  Designer
+                </p>
+                <ul
+                  class="absolute right-[-10px] top-[-290px] block list-none rounded-md bg-white/70 shadow-[0_0_8px_rgba(0,0,0,0.2)] backdrop-blur-sm dark:bg-white/40"
+                />
+              </div>
+            </div>
+          </div>
+          <div
+            class="p-2"
+          >
+            <div
+              class=""
+            >
+              <img
+                alt="Bob"
+                class="h-72 w-60 rounded-md object-cover shadow-lg bg-gray-500 dark:bg-slate-700"
+                data-nimg="1"
+                decoding="async"
+                height="320"
+                loading="lazy"
+                src="/_next/image?url=%2Fimg%2Fbob.png&w=640&q=75"
+                srcset="/_next/image?url=%2Fimg%2Fbob.png&w=256&q=75 1x, /_next/image?url=%2Fimg%2Fbob.png&w=640&q=75 2x"
+                style="color: transparent;"
+                width="240"
+              />
+              <div
+                class="relative mt-3 text-center"
+              >
+                <h3
+                  class="mb-1.5 text-xl font-bold"
+                >
+                  Bob
+                </h3>
+                <p
+                  class="mb-7 text-base font-medium capitalize text-gray-600 dark:text-slate-400"
+                >
+                  Engineer
+                </p>
+                <ul
+                  class="absolute right-[-10px] top-[-290px] block list-none rounded-md bg-white/70 shadow-[0_0_8px_rgba(0,0,0,0.2)] backdrop-blur-sm dark:bg-white/40"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+`;

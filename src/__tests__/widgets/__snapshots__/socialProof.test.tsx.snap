@@ -1,0 +1,53 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`SocialProof matches snapshot 1`] = `
+<div>
+  <section
+    class="relative not-prose scroll-mt-[72px] clear-both"
+    data-testid="widget-wrapper-section"
+    id="social-proof"
+  >
+    <div
+      class="absolute inset-0 bg-transparent"
+    />
+    <div
+      class="relative mx-auto max-w-7xl px-4 md:px-6 py-12 md:py-16 lg:py-20 text-default"
+    >
+      <div
+        class="flex items-center justify-center gap-6 md:gap-9"
+      >
+        <div>
+          <a
+            href="https://one.com"
+            rel="noopener"
+          >
+            <img
+              alt="Logo One"
+              class="h-auto w-12 opacity-50 contrast-50 grayscale duration-75 hover:opacity-100 hover:contrast-100 hover:grayscale-0 md:w-16"
+              height="64"
+              object-fit="contain"
+              src="/img/logo1.png"
+              width="64"
+            />
+          </a>
+        </div>
+        <div>
+          <a
+            href="https://two.com"
+            rel="noopener"
+          >
+            <img
+              alt="Logo Two"
+              class="h-auto w-12 opacity-50 contrast-50 grayscale duration-75 hover:opacity-100 hover:contrast-100 hover:grayscale-0 md:w-16"
+              height="64"
+              object-fit="contain"
+              src="/img/logo2.png"
+              width="64"
+            />
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+`;

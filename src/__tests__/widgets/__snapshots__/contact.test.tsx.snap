@@ -1,0 +1,128 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`Contact matches snapshot 1`] = `
+<div>
+  <section
+    class="relative not-prose scroll-mt-[72px] clear-both"
+    data-testid="widget-wrapper-section"
+    id="contact-section"
+  >
+    <div
+      class="absolute inset-0 bg-transparent"
+    />
+    <div
+      class="relative mx-auto px-4 md:px-6 py-12 md:py-16 lg:py-20 text-default max-w-6xl"
+    >
+      <div
+        class="mb-4"
+      >
+        <div
+          class="mb-6 mx-auto md:mb-12 text-center"
+        >
+          <h2
+            class="font-heading mb-4 font-bold tracking-tight text-3xl sm:text-5xl"
+          >
+            Contact Us
+          </h2>
+        </div>
+      </div>
+      <div
+        class="flex items-stretch justify-center"
+      >
+        <div
+          class="grid md:grid-cols-2"
+        >
+          <div
+            class="h-full pr-6"
+          >
+            <p
+              class="mt-3 mb-12 text-lg text-gray-600 dark:text-slate-400"
+            >
+              Reach out to us anytime
+            </p>
+            <ul
+              class="mb-6 md:mb-0"
+            >
+              <li
+                class="flex"
+              >
+                <div
+                  class="flex h-10 w-10 items-center justify-center rounded bg-blue-900 text-gray-50"
+                >
+                  <svg
+                    class="h-6 w-6"
+                    data-testid="mock-icon"
+                  />
+                </div>
+                <div
+                  class="ml-4 mb-4"
+                >
+                  <h3
+                    class="mb-2 text-lg font-medium leading-6 text-gray-900 dark:text-white"
+                  >
+                    Email
+                  </h3>
+                  <p
+                    class="text-gray-600 dark:text-slate-400"
+                  >
+                    support@example.com
+                  </p>
+                </div>
+              </li>
+              <li
+                class="flex"
+              >
+                <div
+                  class="flex h-10 w-10 items-center justify-center rounded bg-blue-900 text-gray-50"
+                >
+                  <svg
+                    class="h-6 w-6"
+                    data-testid="mock-icon"
+                  />
+                </div>
+                <div
+                  class="ml-4 mb-4"
+                >
+                  <h3
+                    class="mb-2 text-lg font-medium leading-6 text-gray-900 dark:text-white"
+                  >
+                    Address
+                  </h3>
+                  <p
+                    class="text-gray-600 dark:text-slate-400"
+                  >
+                    123 Street
+                  </p>
+                  <p
+                    class="text-gray-600 dark:text-slate-400"
+                  >
+                    City, Country
+                  </p>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <form
+            class="mb-50 card h-fit max-w-2xl mx-auto p-5 md:p-12"
+            id="contactForm"
+          >
+            <div
+              class="mx-0 mb-1 sm:mb-4"
+            />
+            <div
+              class="text-center"
+            >
+              <button
+                class="btn btn-primary sm:mb-20 float-right"
+                type="submit"
+              >
+                test
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+`;

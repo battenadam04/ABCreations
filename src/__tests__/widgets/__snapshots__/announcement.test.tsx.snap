@@ -1,0 +1,58 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`Announcement component matches snapshot 1`] = `
+<div>
+  <div
+    class=" hidden overflow-hidden text-ellipsis whitespace-nowrap border-b border-blue-900 bg-blue-900 px-3 py-4 text-sm md:block"
+  >
+    <span
+      class="bg-blue-800 py-0.5 px-1 text-lg font-semibold text-gray-200"
+    >
+      NEW
+    </span>
+     
+    <a
+      class="cursor-pointer text-orange-100 hover:underline"
+      href="https://www.amazon.com/Hack-Your-Gut-Stress-Free-Well-being-ebook/dp/B0CWF6DGJF/ref=sr_1_1?crid=2KUTQLYL9WP5S&dib=eyJ2IjoiMSJ9.SBJBxoEDqD7fDrCl5UJuLKnqyLacFOScMj01By3MeJEraUvWPkOOX_6hNnglsZ5L7E8WFEZMwdSO8ucfN3-F8fU36wvqsbo6-mC7zNTDWRfWDPFfAupR9K4r9T8OhrtHFdwa3h5RvyKQkG_AgD6mM7f_QoDDRYCagjJ9_8P4YzuCzSclQT8eCuO1GY4J3mfC-I47NQFzWmAuxwVx707SC8mcI7ET4Jka3NTLP8u3T0I.LGy3XrULQZDux3mR7epIbK8ILyMPukk1CFKk9S2rV4E&dib_tag=se&keywords=hack+your+gut&qid=1717146294&sprefix=hack+your+gu%2Caps%2C80&sr=8-1"
+      rel="noreferrer noopened"
+    >
+       
+      Hack Your Gut: Simple Secrets to Digestive Harmony. GET Your copy now!!
+    </a>
+    <form
+      class="mb-50 flex h-9 md:flex-row float-right"
+      id="subscribeForm"
+    >
+      <div
+        class="mx-0 mb-1 sm:mb-4"
+      >
+        <div
+          class="mx-0 mb-1 sm:mb-4"
+        >
+          <label
+            class="pb-1 text-xs uppercase tracking-wider"
+            for="email"
+          />
+          <input
+            autocomplete="on"
+            class="w-md mb-0 w-full rounded-md border border-gray-400 py-2 pl-2 pr-4 shadow-md dark:text-gray-300 sm:mb-0"
+            name="email"
+            placeholder="Enter your email"
+            type="email"
+          />
+        </div>
+      </div>
+      <div
+        class="text-right"
+      >
+        <button
+          class="ml-2 mt-0.5 px-3 py-2 text-xs font-medium text-center text-white bg-blue-700 rounded-md hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-400 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 btn btn-primary sm:mb-20 float-right"
+          type="submit"
+        >
+          Subscribe
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+`;
