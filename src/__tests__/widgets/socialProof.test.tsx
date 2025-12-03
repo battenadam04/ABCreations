@@ -1,8 +1,9 @@
 import { render, screen } from '@testing-library/react';
 import SocialProof from '~/components/widgets/SocialProof';
 
-jest.mock('next/image', () => (props: any) => {
-  return <img {...props} />;
+jest.mock('next/image', () => {
+  const NextImage = ({ src, alt, ...rest }: any) => <img src={src} alt={alt ?? ''} {...rest} />;
+  return NextImage;
 });
 
 describe('SocialProof', () => {

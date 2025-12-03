@@ -14,7 +14,7 @@ describe('Testimonials', () => {
         name: 'Alice',
         platform: 'Google',
         testimonial: 'Great service!',
-      image: { src: '/img/john.png', alt: 'John' },
+        image: { src: '/img/john.png', alt: 'John' },
         href: 'https://google.com',
       },
       {

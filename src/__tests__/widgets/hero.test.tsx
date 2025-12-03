@@ -1,8 +1,9 @@
 import { render, screen, cleanup } from '@testing-library/react';
 import Hero from '~/components/widgets/Hero';
 
-jest.mock('next/image', () => (props: any) => {
-  return <img data-testid="next-image" {...props} />;
+jest.mock('next/image', () => {
+  const NextImage = ({ src, alt, ...rest }: any) => <img src={src} alt={alt ?? ''} {...rest} />;
+  return NextImage;
 });
 
 describe('Hero', () => {
@@ -49,10 +50,9 @@ describe('Hero', () => {
   });
 
   test('renders image if provided', () => {
-    const img = screen.getByTestId('next-image');
+    const img = screen.getByAltText('Hero Image'); // use the alt text
     expect(img).toBeInTheDocument();
     expect(img).toHaveAttribute('src', '/hero.png');
-    expect(img).toHaveAttribute('alt', 'Hero Image');
   });
 
   test('matches snapshot', () => {

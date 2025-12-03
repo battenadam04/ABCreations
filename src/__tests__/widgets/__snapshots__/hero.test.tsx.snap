@@ -97,7 +97,6 @@ exports[`Hero matches snapshot 1`] = `
           <img
             alt="Hero Image"
             class="mx-auto h-auto w-full rounded-md bg-gray-400 dark:bg-slate-700"
-            data-testid="next-image"
             height="607"
             loading="eager"
             placeholder="blur"
