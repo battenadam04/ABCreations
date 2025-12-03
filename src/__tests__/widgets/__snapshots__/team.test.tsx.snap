@@ -44,11 +44,14 @@ exports[`Team matches snapshot 1`] = `
               class=""
             >
               <img
+                alt="Alice"
                 class="h-72 w-60 rounded-md object-cover shadow-lg bg-gray-500 dark:bg-slate-700"
                 data-nimg="1"
                 decoding="async"
                 height="320"
-                src=""
+                loading="lazy"
+                src="/_next/image?url=%2Fimg%2Falice.png&w=640&q=75"
+                srcset="/_next/image?url=%2Fimg%2Falice.png&w=256&q=75 1x, /_next/image?url=%2Fimg%2Falice.png&w=640&q=75 2x"
                 style="color: transparent;"
                 width="240"
               />
@@ -78,11 +81,14 @@ exports[`Team matches snapshot 1`] = `
               class=""
             >
               <img
+                alt="Bob"
                 class="h-72 w-60 rounded-md object-cover shadow-lg bg-gray-500 dark:bg-slate-700"
                 data-nimg="1"
                 decoding="async"
                 height="320"
-                src=""
+                loading="lazy"
+                src="/_next/image?url=%2Fimg%2Fbob.png&w=640&q=75"
+                srcset="/_next/image?url=%2Fimg%2Fbob.png&w=256&q=75 1x, /_next/image?url=%2Fimg%2Fbob.png&w=640&q=75 2x"
                 style="color: transparent;"
                 width="240"
               />

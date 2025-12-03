@@ -21,7 +21,7 @@ describe('Testimonials', () => {
         name: 'Bob',
         platform: 'Trustpilot',
         testimonial: 'Amazing!',
-        image: '/b.jpg' as any,
+        image: { src: '/img/john.png', alt: 'John' },
       },
     ],
   };

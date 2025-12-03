@@ -11,13 +11,13 @@ describe('Team', () => {
       {
         name: 'Alice',
         occupation: 'Designer',
-        image: '/img1.jpg' as any,
+        image: { src: '/img/alice.png', alt: 'Alice' },
         items: [],
       },
       {
         name: 'Bob',
         occupation: 'Engineer',
-        image: '/img2.jpg' as any,
+        image: { src: '/img/bob.png', alt: 'Bob' },
         items: [],
       },
     ],
@@ -25,29 +25,20 @@ describe('Team', () => {
 
   test('renders Headline when header is provided', () => {
     render(<Team {...baseProps} />);
-
-    expect(screen.getByTestId('mock-headline')).toHaveTextContent('Our Team');
+    expect(screen.getByText('Our Team')).toBeInTheDocument();
+    expect(screen.getByText('Meet the experts')).toBeInTheDocument();
   });
 
   test('does not render Headline when header is missing', () => {
-    const { queryByTestId } = render(<Team {...baseProps} header={undefined} />);
-
-    expect(queryByTestId('mock-headline')).toBeNull();
+    render(<Team {...baseProps} header={undefined} />);
+    expect(screen.queryByText('Our Team')).toBeNull();
+    expect(screen.queryByText('Meet the experts')).toBeNull();
   });
 
-  test('renders correct number of ItemTeam components', () => {
+  test('renders all team member names and occupations', () => {
     render(<Team {...baseProps} />);
-
-    const items = screen.getAllByTestId('mock-itemteam');
-    expect(items.length).toBe(2);
-  });
-
-  test('passes correct props to ItemTeam mock', () => {
-    render(<Team {...baseProps} />);
-
     expect(screen.getByText('Alice')).toBeInTheDocument();
     expect(screen.getByText('Designer')).toBeInTheDocument();
-
     expect(screen.getByText('Bob')).toBeInTheDocument();
     expect(screen.getByText('Engineer')).toBeInTheDocument();
   });
