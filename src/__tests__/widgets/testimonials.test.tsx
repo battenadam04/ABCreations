@@ -1,8 +1,9 @@
 import { render, screen } from '@testing-library/react';
 import Testimonials from '~/components/widgets/Testimonials';
+import { Image, TestimonialsProps } from '~/shared/types';
 
 describe('Testimonials', () => {
-  const baseProps = {
+  const baseProps: TestimonialsProps = {
     id: 'testimonials-section',
     hasBackground: false,
     header: { title: 'What People Say' },
@@ -20,8 +21,7 @@ describe('Testimonials', () => {
         name: 'Bob',
         platform: 'Trustpilot',
         testimonial: 'Amazing!',
-        image: '/b.jpg',
-        href: undefined,
+        image: '/b.jpg' as any,
       },
     ],
   };
@@ -46,12 +46,7 @@ describe('Testimonials', () => {
   });
 
   test('does not wrap testimonial in link when callToAction exists', () => {
-    render(
-      <Testimonials
-        {...baseProps}
-        callToAction={{ text: 'Learn More', href: '/learn' }}
-      />
-    );
+    render(<Testimonials {...baseProps} callToAction={{ text: 'Learn More', href: '/learn' }} />);
 
     // CTA should render
     expect(screen.getByRole('link', { name: /learn more/i })).toBeInTheDocument();
@@ -65,12 +60,7 @@ describe('Testimonials', () => {
     const { rerender } = render(<Testimonials {...baseProps} />);
     expect(screen.queryByRole('link', { name: /learn more/i })).toBeNull();
 
-    rerender(
-      <Testimonials
-        {...baseProps}
-        callToAction={{ text: 'Learn More', href: '/learn' }}
-      />
-    );
+    rerender(<Testimonials {...baseProps} callToAction={{ text: 'Learn More', href: '/learn' }} />);
     expect(screen.getByRole('link', { name: /learn more/i })).toBeInTheDocument();
   });
 

@@ -1,12 +1,11 @@
 import { render, screen } from '@testing-library/react';
 import Comparison from '~/components/widgets/Comparison';
-import { IconCheck, IconMinus } from "@tabler/icons-react";
+import { IconCheck, IconMinus } from '@tabler/icons-react';
 
 jest.mock('@tabler/icons-react', () => ({
   IconCheck: jest.fn(() => <div data-testid="mock-check" />),
   IconMinus: jest.fn(() => <div data-testid="mock-minus" />),
 }));
-
 
 describe('Comparison', () => {
   const baseProps = {
@@ -37,18 +36,18 @@ describe('Comparison', () => {
     expect(screen.getByText('Basic')).toBeInTheDocument();
   });
 
-  test("renders IconCheck when item title is true", () => {
+  test('renders IconCheck when item title is true', () => {
     render(<Comparison {...baseProps} />);
 
     expect(IconCheck).toHaveBeenCalled();
-    expect(screen.getAllByTestId("mock-check").length).toBeGreaterThan(0);
+    expect(screen.getAllByTestId('mock-check').length).toBeGreaterThan(0);
   });
 
-  test("renders IconMinus when item title is false", () => {
+  test('renders IconMinus when item title is false', () => {
     render(<Comparison {...baseProps} />);
 
     expect(IconMinus).toHaveBeenCalled();
-    expect(screen.getAllByTestId("mock-minus").length).toBeGreaterThan(0);
+    expect(screen.getAllByTestId('mock-minus').length).toBeGreaterThan(0);
   });
 
   test('renders CTA only in non-first columns when callToAction exists', () => {
