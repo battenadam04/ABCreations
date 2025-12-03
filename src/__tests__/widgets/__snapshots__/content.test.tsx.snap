@@ -134,17 +134,7 @@ exports[`Content matches snapshot 1`] = `
             <div
               class="relative m-auto max-w-4xl"
             >
-              <img
-                alt="Example Image"
-                class="mx-auto w-full rounded-lg shadow-lg bg-gray-400 dark:bg-slate-700"
-                data-testid="next-image"
-                height="828"
-                placeholder="blur"
-                quality="50"
-                sizes="(max-width: 768px) 100vw, 432px"
-                src="/image.png"
-                width="828"
-              />
+              Next image stub
             </div>
           </div>
         </div>

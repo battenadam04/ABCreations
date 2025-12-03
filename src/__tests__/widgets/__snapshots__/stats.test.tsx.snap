@@ -1,0 +1,79 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`Stats matches snapshot 1`] = `
+<div>
+  <section
+    class="relative not-prose scroll-mt-[72px] clear-both"
+    data-testid="widget-wrapper-section"
+    id="stats-section"
+  >
+    <div
+      class="absolute inset-0 bg-transparent"
+    />
+    <div
+      class="relative mx-auto max-w-7xl px-4 md:px-6 py-12 md:py-16 lg:py-20 text-default"
+    >
+      <div
+        class="row-gap-8 grid grid-cols-2 md:grid-cols-4"
+      >
+        <div
+          class="mb-12 text-center md:mb-0 md:border-r md:last:border-none dark:md:border-slate-500"
+        >
+          <div
+            class="font-heading text-primary text-[2.6rem] font-bold dark:text-white lg:text-5xl xl:text-6xl"
+          >
+            1000+
+          </div>
+          <p
+            class="text-sm font-medium uppercase tracking-widest text-gray-800 dark:text-slate-400 lg:text-base"
+          >
+            Users
+          </p>
+        </div>
+        <div
+          class="mb-12 text-center md:mb-0 md:border-r md:last:border-none dark:md:border-slate-500"
+        >
+          <div
+            class="font-heading text-primary text-[2.6rem] font-bold dark:text-white lg:text-5xl xl:text-6xl"
+          >
+            2500+
+          </div>
+          <p
+            class="text-sm font-medium uppercase tracking-widest text-gray-800 dark:text-slate-400 lg:text-base"
+          >
+            Downloads
+          </p>
+        </div>
+        <div
+          class="mb-12 text-center md:mb-0 md:border-r md:last:border-none dark:md:border-slate-500"
+        >
+          <div
+            class="font-heading text-primary text-[2.6rem] font-bold dark:text-white lg:text-5xl xl:text-6xl"
+          >
+            75+
+          </div>
+          <p
+            class="text-sm font-medium uppercase tracking-widest text-gray-800 dark:text-slate-400 lg:text-base"
+          >
+            Countries
+          </p>
+        </div>
+        <div
+          class="mb-12 text-center md:mb-0 md:border-r md:last:border-none dark:md:border-slate-500"
+        >
+          <div
+            class="font-heading text-primary text-[2.6rem] font-bold dark:text-white lg:text-5xl xl:text-6xl"
+          >
+            10+
+          </div>
+          <p
+            class="text-sm font-medium uppercase tracking-widest text-gray-800 dark:text-slate-400 lg:text-base"
+          >
+            Awards
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+`;

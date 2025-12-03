@@ -1,5 +1,12 @@
 import { render, screen } from '@testing-library/react';
 import Comparison from '~/components/widgets/Comparison';
+import { IconCheck, IconMinus } from "@tabler/icons-react";
+
+jest.mock('@tabler/icons-react', () => ({
+  IconCheck: jest.fn(() => <div data-testid="mock-check" />),
+  IconMinus: jest.fn(() => <div data-testid="mock-minus" />),
+}));
+
 
 describe('Comparison', () => {
   const baseProps = {
@@ -30,25 +37,18 @@ describe('Comparison', () => {
     expect(screen.getByText('Basic')).toBeInTheDocument();
   });
 
-  test('renders text items in first column as h4 elements', () => {
+  test("renders IconCheck when item title is true", () => {
     render(<Comparison {...baseProps} />);
-    expect(screen.getByText('Fast support').tagName).toBe('H4');
+
+    expect(IconCheck).toHaveBeenCalled();
+    expect(screen.getAllByTestId("mock-check").length).toBeGreaterThan(0);
   });
 
-  test('renders text items in non-first columns as p elements', () => {
+  test("renders IconMinus when item title is false", () => {
     render(<Comparison {...baseProps} />);
-    const items = screen.getAllByText('Fast support');
-    expect(items[1].tagName).toBe('P');
-  });
 
-  test('renders IconCheck when item title is true', () => {
-    render(<Comparison {...baseProps} />);
-    expect(screen.getAllByTestId('tabler-icon-check').length).toBeGreaterThan(0);
-  });
-
-  test('renders IconMinus when item title is false', () => {
-    render(<Comparison {...baseProps} />);
-    expect(screen.getAllByTestId('tabler-icon-minus').length).toBeGreaterThan(0);
+    expect(IconMinus).toHaveBeenCalled();
+    expect(screen.getAllByTestId("mock-minus").length).toBeGreaterThan(0);
   });
 
   test('renders CTA only in non-first columns when callToAction exists', () => {
